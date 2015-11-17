@@ -12,7 +12,7 @@ $(document).ready(function(){
 		var message = msg.html();
 		oldMessages.push(message);
 		while(i<oldMessages.length){
-			if(message.search(oldMessages[i])){
+			if(message.search(oldMessages[i]) >= 1){
 				message.replace(oldMessages[i], '');
 			}
 			i++;
