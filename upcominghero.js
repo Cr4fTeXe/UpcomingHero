@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 	var i = 0;
 	var oldMessages = [];
+	var currentUser = "";
 
 	$('body').on('DOMNodeInserted', 'div.text p', function () {
 		var msg = getChatMessage($(this));
@@ -15,6 +16,11 @@ $(document).ready(function(){
 		return msg.html();
 	}
 	function getChatUser(user){
-		return user.children(".username").html();
+		if(user.children(".username").html()){
+			currentUser = user.children(".username").html();
+			return user.children(".username").html();
+		}else{
+			return currentUser;
+		}
 	}
 })
