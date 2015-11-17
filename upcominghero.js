@@ -5,11 +5,15 @@ $(document).ready(function(){
 	var oldMessages = [];
 
 	$('body').on('DOMNodeInserted', 'div.text p', function () {
-		getChatMessage($(this));
+		var msg = getChatMessage($(this));
+		var user = getChatUser($(this));
+		console.log(msg + "    " + user);
 	});
 
 	function getChatMessage(msg){
-		var message = msg.html();
-		console.log(message);
+		return msg.html();
+	}
+	function getChatUser(user){
+		return user.child(".username").html();
 	}
 })
