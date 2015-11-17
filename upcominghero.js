@@ -4,22 +4,12 @@ $(document).ready(function(){
 	var i = 0;
 	var oldMessages = [];
 
-	$('body').on('DOMNodeInserted', 'div.text', function () {
-      getChatMessage($(this));
+	$('body').on('DOMNodeInserted', 'div.text p', function () {
+		getChatMessage($(this));
 	});
 
 	function getChatMessage(msg){
 		var message = msg.html();
-		oldMessages.push(message);
-		while(i<oldMessages.length){
-			if(message.search(oldMessages[i]) >= 1){
-				message.replace(oldMessages[i], '');
-			}
-			i++;
-		}
-
-
-
 		console.log(message);
 	}
 })
