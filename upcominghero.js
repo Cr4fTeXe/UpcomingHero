@@ -1,7 +1,8 @@
 $(document).ready(function(){
+	console.log("UpcomingHero succesfully loaded!");
 
 	$('body').on('DOMNodeInserted', 'div.text p', function () {
-      getChatMessage($(this));
+      		getChatMessage($(this));
 	});
 
 	function getChatMessage(msg){
