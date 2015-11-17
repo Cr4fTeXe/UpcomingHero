@@ -11,6 +11,7 @@ $(document).ready(function(){
 	});
 
 	function getChatMessage(msg){
+		msg = msg.children(".username").remove();
 		return msg.html();
 	}
 	function getChatUser(user){
