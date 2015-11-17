@@ -12,6 +12,7 @@ $(document).ready(function(){
 	});
 
 	function getChatMessage(msg){
+		var msg = msg;
 		var newmsg = msg.replace(msg.children(".username").html(), '');
 		return newmsg.html();
 	}
