@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var i = 0;
 	var currentUser = "";
 
-	$('body').on('DOMNodeInserted', 'div.text p', function () {
+	$('body').on('DOMNodeInserted', 'div.text', function () {
 		var msg = getChatMessage($(this));
 		var user = getChatUser($(this));
 		console.log("Message: "+msg);
