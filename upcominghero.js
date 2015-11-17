@@ -12,8 +12,8 @@ $(document).ready(function(){
 	});
 
 	function getChatMessage(msg){
-		msg = msg.replace(msg.children(".username").html(), '');
-		return msg.html();
+		var newmsg = msg.replace(msg.children(".username").html(), '');
+		return newmsg.html();
 	}
 	function getChatUser(user){
 		if(user.children(".username").html()){
