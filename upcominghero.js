@@ -14,6 +14,6 @@ $(document).ready(function(){
 		return msg.html();
 	}
 	function getChatUser(user){
-		return user.child(".username").html();
+		return user.children(".username").html();
 	}
 })
