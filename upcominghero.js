@@ -15,6 +15,7 @@ $(document).ready(function(){
 			if(message.search(oldMessages[i])){
 				message.replace(oldMessages[i], '');
 			}
+			i++;
 		}
 
 
