@@ -12,7 +12,7 @@ $(document).ready(function(){
 	});
 
 	function getChatMessage(msg){
-		msg = msg.children(".username").remove();
+		msg = msg.replace(msg.children(".username").html(), '');
 		return msg.html();
 	}
 	function getChatUser(user){
