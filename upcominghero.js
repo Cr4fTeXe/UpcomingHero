@@ -2,13 +2,13 @@ $(document).ready(function(){
 	console.log("UpcomingHero succesfully loaded!");
 
 	var i = 0;
-	var oldMessages = [];
 	var currentUser = "";
 
 	$('body').on('DOMNodeInserted', 'div.text p', function () {
 		var msg = getChatMessage($(this));
 		var user = getChatUser($(this));
-		console.log(msg + "    " + user);
+		console.log("Message: "+msg);
+		console.log("User: "+user);
 	});
 
 	function getChatMessage(msg){
