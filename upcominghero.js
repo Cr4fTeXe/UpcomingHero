@@ -27,20 +27,7 @@ $(document).ready(function(){
 	function sayhello(u){
 		var user = u;
 		var chatmsg = "Hello "+user+"!";
-
-		var request = new XMLHttpRequest();
-		request.open('POST', 'https://api.dubtrack.fm/chat/upcoming');
-		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		request.onreadystatechange = function () {
-		  if (this.readyState === 4) {
-		    console.log('Status:', this.status);
-		    console.log('Headers:', this.getAllResponseHeaders());
-		    console.log('Body:', this.responseText);
-		  }
-		};
-		var body = "message={"+chatmsg+"}";
-		request.send(body);
-		
+		$.post('https://api.dubtrack.fm/chat/upcoming', { 'message': chatmsg, 'type': 'youtube' });
 		}
 
 	$('body').on('DOMNodeInserted', 'div.text', function () {
