@@ -12,9 +12,9 @@ $(document).ready(function(){
 	});
 
 	function getChatMessage(msg){
-		var msg = msg;
-		var newmsg = msg.replace(msg.children(".username").html(), '');
-		return newmsg.html();
+		var amsg = msg;
+		amsg = amsg.replace(amsg.children(".username").html(), '');
+		return amsg.html();
 	}
 	function getChatUser(user){
 		if(user.children(".username").html()){
