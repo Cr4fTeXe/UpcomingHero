@@ -20,7 +20,7 @@ $(document).ready(function(){
 		var user = user;
 		if(user.children().children(".username").html()){
 			currentUser = user.children().children(".username").html();
-			return user.children.children().(".username").html();
+			return user.children().children(".username").html();
 		}else{
 			return currentUser;
 		}
