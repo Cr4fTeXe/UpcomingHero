@@ -19,7 +19,11 @@ $(document).ready(function(){
 
 	function getChatMessage(msg){
 		var amsg = msg;
+		var user = amsg.children().children(".username").html();
 		var amsghtml = amsg.html(); //Message
+		amsghtml = amsghtml.replace("<p>","");
+		amsghtml = amsghtml.replace("</p>","");
+		amsghtml = amsghtml.replace('<a href="#" class="username">'+user+'</a>', '');
 		return amsghtml;
 	}
 	function getChatUser(user){
