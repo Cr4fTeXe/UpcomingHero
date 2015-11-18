@@ -9,10 +9,6 @@ $(document).ready(function(){
 		var msg = getChatMessage($(this));
 		var user = getChatUser($(this));
 
-		msg = msg.replace("<p>","");
-		msg = msg.replace("</p>","");
-		msg = msg.replace('<a href="#" class="username">'+user+'</a>', '');
-
 		console.log("Message: "+msg);
 		console.log("User: "+user);
 	});
@@ -22,7 +18,7 @@ $(document).ready(function(){
 		var user = amsg.children().children(".username").html();
 		var amsghtml = amsg.html(); //Message
 		amsghtml = amsghtml.replace("<p>","");
-		amsghtml = amsghtml.replace("</p>","");
+		amsghtml = amsghtml.replace("</p>"," ");
 		amsghtml = amsghtml.replace('<a href="#" class="username">'+user+'</a>', '');
 		return amsghtml;
 	}
