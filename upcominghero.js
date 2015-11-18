@@ -13,14 +13,13 @@ $(document).ready(function(){
 
 	function getChatMessage(msg){
 		var amsg = msg;
-		console.log("amsg: ");
-		console.log(amsg);
-		amsg = amsg.replace(amsg.children(".username").html(), '');
-		console.log("amsg2: ");
-		console.log(amsg);
+		var amsgchild = amsg.children(".username").html();
+		console.log("amsgchild: ");
+		console.log(amsgchild);
+		var amsghtml = amsg.html().replace(amsgchild, '');
 		console.log("amsghtml: ");
-		console.log(amsg.html());
-		return amsg.html();
+		console.log(amsghtml);
+		return amsghtml;
 	}
 	function getChatUser(user){
 		if(user.children(".username").html()){
