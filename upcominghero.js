@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	console.log("UpcomingHero succesfully loaded!");
+	$(".left_section").remove();
 
 	var i = 0;
 	var currentUser = "";
