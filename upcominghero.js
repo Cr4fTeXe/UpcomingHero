@@ -15,7 +15,7 @@ $(document).ready(function(){
 		var amsg = msg;
 		var amsgchild = amsg.children().children(".username");
 		var amsghtml = amsg.html();
-		var amsgchildhtml = amsgchild.html();
+		var amsgchildhtml = amsgchild.html(); //username
 
 console.log("amsgchildhtml: ");
 console.log(amsgchildhtml);
@@ -23,7 +23,7 @@ console.log("amsgchild: ");
 console.log(amsgchild);
 
 
-		amsghtml = amsghtml.replace(amsgchildhtml, '');
+		amsghtml = amsghtml.replace(amsgchild, '');
 
 console.log("amsghtml: ");
 console.log(amsghtml);
