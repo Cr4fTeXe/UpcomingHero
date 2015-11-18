@@ -8,6 +8,10 @@ $(document).ready(function(){
 	$('body').on('DOMNodeInserted', 'div.text', function () {
 		var msg = getChatMessage($(this));
 		var user = getChatUser($(this));
+
+		msg.replace("<p>","");
+		msg.replace("</p>","");
+		msg.replace('<a href="#" class="username">'user'</a>', '');
 		console.log("Message: "+msg);
 		console.log("User: "+user);
 	});
