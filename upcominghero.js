@@ -27,7 +27,7 @@ $(document).ready(function(){
 	function sayhello(u){
 		var user = u;
 		var chatmsg = "Hello "+user+"!";
-		$.post('https://api.dubtrack.fm/chat/upcoming', { 'message': chatmsg, 'token': '845a3560186a36ef6dc48e3946a7ba944ef3e0578b14ddbc94d30d9c4bded4bd418a8e7db786c2d6523badb0e035411e' });
+		$.post('https://api.dubtrack.fm/chat/upcoming', { 'message': chatmsg, 'token': '' });
 		}
 
 	$('body').on('DOMNodeInserted', 'div.text', function () {
