@@ -27,7 +27,7 @@ $(document).ready(function(){
 	function sayhello(u){
 		var user = u;
 		var chatmsg = "Hello "+user+"!";
-		$.post('https://api.dubtrack.fm/chat/upcoming', { 'message': chatmsg, 'type': 'youtube' });
+		$.post('https://api.dubtrack.fm/chat/upcoming', { 'message': chatmsg });
 		}
 
 	$('body').on('DOMNodeInserted', 'div.text', function () {
