@@ -11,7 +11,8 @@ $(document).ready(function(){
 
 		msg.replace("<p>","");
 		msg.replace("</p>","");
-		msg.replace('<a href="#" class="username">'user'</a>', '');
+		msg.replace('<a href="#" class="username">'+user+'</a>', '');
+
 		console.log("Message: "+msg);
 		console.log("User: "+user);
 	});
