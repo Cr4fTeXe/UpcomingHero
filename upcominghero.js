@@ -13,7 +13,10 @@ $(document).ready(function(){
 
 	function getChatMessage(msg){
 		var amsg = msg;
+		console.log("amsg: "+amsg);
 		amsg = amsg.replace(amsg.children(".username").html(), '');
+		console.log("amsg2: "+amsg);
+		console.log("amsghtml: "+amsg.html());
 		return amsg.html();
 	}
 	function getChatUser(user){
