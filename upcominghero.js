@@ -19,6 +19,8 @@ $(document).ready(function(){
 
 console.log("amsgchildhtml: ");
 console.log(amsgchildhtml);
+console.log("amsgchild: ");
+console.log(amsgchild);
 
 
 		amsghtml = amsghtml.replace(amsgchildhtml, '');
