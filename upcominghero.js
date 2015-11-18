@@ -13,12 +13,19 @@ $(document).ready(function(){
 
 	function getChatMessage(msg){
 		var amsg = msg;
-		var amsgchild = amsg.children(".username").html();
-		console.log("amsgchild: ");
-		console.log(amsgchild);
-		var amsghtml = amsg.html().replace(amsgchild, '');
-		console.log("amsghtml: ");
-		console.log(amsghtml);
+		var amsgchild = amsg.children(".username");
+		var amsghtml = amsg.html();
+		var amsgchildhtml = amsgchild.html();
+
+console.log("amsgchildhtml: ");
+console.log(amsgchildhtml);
+
+
+		amsghtml = amsghtml.replace(amsgchildhtml, '');
+
+console.log("amsghtml: ");
+console.log(amsghtml);
+
 		return amsghtml;
 	}
 	function getChatUser(user){
