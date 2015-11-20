@@ -98,6 +98,7 @@ function queuePlaylist(){ $(".display-browser").trigger("click"); $(".playlist_i
 function tooLong(){ 
 	var mins = $(".min").html();
 	var status = true;
+	mins.replace('"', '');
 	mins = parseInt(mins);
 	if(mins > 12 && status == true){
 		skip();
@@ -149,6 +150,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!fb') >= 0){ fb(); }
 		if(msg.search('!dubx') >= 0){ dubx(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('obama') >= 0 ){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
+		if(msg.search('!rave') >= 0){ postMsg("http://i.imgur.com/Rxv5Qnu.gif");}
 		if(msg.search('!mehskip') >= 0){ mehskip(); }
 		if(msg.search('!voteskip') >= 0){ votedisabledfalse(); voteskip("start"); }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
