@@ -134,7 +134,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
-		if(msg.search('!queuePlaylist') >= 0 && staff == true && user == "Cr4fTeXe"){ queuePlaylist(); }
+		if(msg.search('!queuePlaylist') >= 0 && staff == true && user == "cr4ftexe"){ queuePlaylist(); }
 		if(msg.search('!joinQueue') >= 0 && staff == true){ joinQueue(); }
 		if(msg.search('!pauseQueue') >= 0 && staff == true){ pauseQueue(); }
 		if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
