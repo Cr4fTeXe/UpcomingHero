@@ -51,6 +51,7 @@ function fb(){
 	var chatmsg = "Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
 	postMsg(chatmsg);
 	}
+function dubx(){postMsg("Make sure to use the DubX-Extension and to activate the Community-Theme option. Get the extension here: https://dubx.net/");}
 function skipvideo(vote){
 	var vot = vote;
 	$(".skip-el").trigger("click");
@@ -114,7 +115,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!love, !hardwareinfo, !hello, !yolo, !ping, !fb, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
+	var commandlist = "!love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
 	var staffcommandlist = "!skip, !joinQueue, !pauseQueue, !resumeQueue";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
@@ -126,6 +127,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!fb') >= 0){ fb(); }
+		if(msg.search('!dubx') >= 0){ dubx(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('obama') >= 0 ){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!mehskip') >= 0){ mehskip(); }
 		if(msg.search('!voteskip') >= 0){ votedisabledfalse(); voteskip("start"); }
