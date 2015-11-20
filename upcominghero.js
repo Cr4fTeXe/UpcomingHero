@@ -133,7 +133,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!fb') >= 0){ fb(); }
 		if(msg.search('!ping') >= 0){ ping(); }
-		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
+		if(msg.search('!voteskip') >= 0){ voteskip("start"); }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
