@@ -97,13 +97,15 @@ function resumeQueue(){ $(".display-browser").trigger("click"); $(".pause-queue"
 function queuePlaylist(){ $(".display-browser").trigger("click"); $(".playlist_icon").trigger("click"); $(".queue-playlist").trigger("click"); $(".close-browser").trigger("click"); }
 function tooLong(){ 
 	var mins = $(".min").html();
+	var status = true;
 	console.log(mins);
 	mins = parseInt(mins);
 	console.log("mins");
 	console.log(mins);
-	if(mins > 12){
+	if(mins > 12 && status == true){
 		skip();
 		postMsg("Video skipped, because it was too long!");
+		status = false;
 	}
 }
 
