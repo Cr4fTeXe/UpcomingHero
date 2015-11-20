@@ -100,12 +100,8 @@ function voteskip(act){
 
 //Meh-Skip
 function mehskip(){
-	var woot = $('.dubup .dubcounter').html();
-	woot = parseInt(woot);
-	console.log(woot);
-	var meh = $('.dubdown .dubcounter').html();
-	meh = parseInt(meh);
-	console.log(meh);
+	var woot = $('.dubup > .dub-counter').html();
+	var meh = $('.dubdown > .dub-counter').html();
 	if(meh > woot && meh != 0){skipvideo();}
 }
 
@@ -121,6 +117,8 @@ var urlRandom = "https://imgur.com/random";
       postMsg(randImage.src);
   });
 }*/
+
+$(".dub-counter").on("change", function(){mehskip();})
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
