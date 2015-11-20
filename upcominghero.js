@@ -138,13 +138,13 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !mehskip, !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
+	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !mehskip, !voteskip, !voteyes, !voteno, !skip (Staff only), !commands";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	if(user != "hero"){
 		//if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
-		if(msg.search('!racist') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
+		if(msg.search('!racist') >= 0 ||msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('obama') >= 0 ){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!fb') >= 0){ fb(); }
