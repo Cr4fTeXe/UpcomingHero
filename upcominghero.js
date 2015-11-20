@@ -78,13 +78,15 @@ function voteskip(act){
 			if(skip > 0){skipvideo("vote"); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
 		}else{
 			if(act == "yes"){
+				var alle = getTotalUser();
 				skip++; uservotes++;
-				postMsg(uservotes+" out of "+getTotalUser()+" voted.");
+				postMsg(uservotes+" out of "+alle+" voted.");
 				console.log(skip);
 			}else{
 				if(act == "no"){
 					skip--; uservotes++;
-					postMsg(uservotes+" out of "+getTotalUser()+" voted.");
+					var alle = getTotalUser();
+					postMsg(uservotes+" out of "+alle+" voted.");
 					console.log(skip);
 				}else{
 					console.log("No Vote-Action");
