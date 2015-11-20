@@ -7,7 +7,6 @@ var skip = 0;
 var skipuser = 0;
 var uservotes = 0;
 var currentUser = "";
-var votedisabled = false;
 
 function getChatMessage(msg){
 	var amsg = msg;
@@ -90,6 +89,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	console.log(rank);
 	var userrank = "";
 	var staff = false;
+	var votedisabled = false;
 
 	if(rank.search('isMod') >= 0){userrank = "Mod"; staff = true;}
 	if(rank.search('isVIP') >= 0){userrank = "VIP";}
