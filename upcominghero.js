@@ -100,8 +100,8 @@ function tooLong(){
 	console.log(mins);
 	mins = parseInt(mins);
 	if(mins > 12){
-		postMsg("Video skipped, because it was too long!");
 		skip();
+		postMsg("Video skipped, because it was too long!");
 	}
 }
 
