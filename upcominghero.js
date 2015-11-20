@@ -86,13 +86,15 @@ function voteskip(act){
 }
 
 //Meh-Skip
-$('.dubup, .dubdown').on('change', function(){
-	var woot = $('.dubup .dubcounter').text;
+function mehskip(){
+	var woot = $('.dubup .dubcounter').html();
 	woot = parseInt(woot);
-	var meh = $('.dubdown .dubcounter').text;
+	console.log(woot);
+	var meh = $('.dubdown .dubcounter').html();
 	meh = parseInt(meh);
+	console.log(meh);
 	if(meh > woot && meh != 0){skipvideo();}
-})
+}
 
 
 /*function randomImgur() {
@@ -132,6 +134,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!fb') >= 0){ fb(); }
 		if(msg.search('!ping') >= 0){ ping(); }
+		if(msg.search('!mehskip') >= 0){ mehskip(); }
 		if(msg.search('!voteskip') >= 0){ voteskip("start"); }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
