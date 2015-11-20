@@ -134,7 +134,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
-	if(user != "hero"){
+	if(user != "hero" && user != "cyberpixlcraft"){
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
 		if(msg.search('!time') >= 0){ postMsg(now);}
