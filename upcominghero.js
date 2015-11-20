@@ -90,6 +90,10 @@ function mehskip(){
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
 function hardwareinfo(){postMsg("This bot runs on the Raspberry Pi of Cr4fTeXe.");}
+function joinQueue(){ $(".play-song-link").trigger("click"); $(".close-browser").trigger("click");}
+function pauseQueue(){ $(".display-browser").trigger("click"); $(".pause-queue").trigger("click"); $(".close-browser").trigger("click");}
+function resumeQueue(){ $(".display-browser").trigger("click"); $(".pause-queue").trigger("click"); $(".close-browser").trigger("click");}
+function queuePlaylist(){ $(".display-browser").trigger("click"); $(".playlist_icon").trigger("click"); $(".queue-playlist").trigger("click"); $(".close-browser").trigger("click"); }
 
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
@@ -110,12 +114,13 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !mehskip, !voteskip, !voteyes, !voteno, !skip (Staff only), !commands";
+	var commandlist = "!love, !hardwareinfo, !hello, !yolo, !ping, !fb, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
+	var staffcommandlist = "!skip, !joinQueue, !pauseQueue, !resumeQueue";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	if(user != "hero"){
-		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0){ love(); }
+		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!hardwareinfo')){ hardwareinfo(); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
@@ -127,6 +132,11 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
+		if(msg.search('!queuePlaylist') >= 0 && staff == true && user == "Cr4fTeXe"){ queuePlaylist(); }
+		if(msg.search('!joinQueue') >= 0 && staff == true){ joinQueue(); }
+		if(msg.search('!pauseQueue') >= 0 && staff == true){ pauseQueue(); }
+		if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
+		if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
 		if(msg.search('!commands') >= 0){ postMsg(commandlist); }
 	}
 
