@@ -87,10 +87,10 @@ function voteskip(act){
 
 //Meh-Skip
 function mehskip(){
-	var woot = $('.dubup .dubcounter').html();
+	var woot = $('.dubup .dubcounter').text;
 	woot = parseInt(woot);
 	console.log(woot);
-	var meh = $('.dubdown .dubcounter').html();
+	var meh = $('.dubdown .dubcounter').text;
 	meh = parseInt(meh);
 	console.log(meh);
 	if(meh > woot && meh != 0){skipvideo();}
@@ -125,7 +125,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
+	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !mehskip, !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
 	if(user != "hero"){
 		//if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
