@@ -96,7 +96,7 @@ $('.dubup', '.dubdown').on('change', function(){
 })
 
 
-function randomImgur() {
+/*function randomImgur() {
 var urlRandom = "https://imgur.com/random";
   $.ajax( {
     url: urlRandom, context: document.window 
@@ -106,7 +106,7 @@ var urlRandom = "https://imgur.com/random";
       randImage.src = $(this).url;
       postMsg(randImage.src);
   });
-}
+}*/
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
@@ -124,10 +124,11 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!hello, !yolo, !ping, !fb, !random (Staff only), !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
+	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
 	if(user != "hero"){
-		if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
+		//if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
+		if(msg.search('!racist') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!fb') >= 0){ fb(); }
