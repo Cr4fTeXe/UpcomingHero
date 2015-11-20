@@ -82,15 +82,17 @@ function voteskip(act){
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
+	var commandlist = "!hello, !yolo, !ping, !skip (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
 	if(user != "Hero"){
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
-		if(msg.search('!skipyes') >= 0){ voteskip("yes"); }
-		if(msg.search('!skipno') >= 0){ voteskip("no"); }
-		if(user == "Cr4fTeXe" && msg.search('!skip')){skip();}
+		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
+		if(msg.search('!voteno') >= 0){ voteskip("no"); }
+		if(user == "Cr4fTeXe" && msg.search('!skip')){ skip(); }
+		if(msg.search('!commands') >= 0){ postMsg(commandlist); }
 	}
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
 
