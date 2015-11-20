@@ -121,7 +121,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	if(user != "hero"){
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
-		if(msg.search('!hardwareinfo')){ hardwareinfo(); }
+		if(msg.search('!hardwareinfo') >= 0){ hardwareinfo(); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
