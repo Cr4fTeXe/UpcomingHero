@@ -79,9 +79,13 @@ function voteskip(act){
 		}else{
 			if(act == "yes"){
 				skip++; uservotes++;
+				postMsg(uservotes+" out of "+getTotalUser()+" voted.");
+				console.log(skip);
 			}else{
 				if(act == "no"){
 					skip--; uservotes++;
+					postMsg(uservotes+" out of "+getTotalUser()+" voted.");
+					console.log(skip);
 				}else{
 					console.log("No Vote-Action");
 				}
