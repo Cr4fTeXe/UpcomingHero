@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	console.log("UpcomingHero succesfully loaded!");
-	//$(".left_section").remove();
+	$(".left_section").remove();
 
 	var i = 0;
 	var currentUser = "";
@@ -23,24 +23,29 @@ $(document).ready(function(){
 			return currentUser;
 		}
 		}
-
+function postMsg(msg){
+  var message = msg;
+  //$(".chatinout").val() = message;
+  //$(".chatbutton").trigger("click");
+}
 	function sayhello(u){
 		var user = u;
 		var chatmsg = "Hello "+user+"!";
-		$.post('https://api.dubtrack.fm/chat/upcoming', { 'message': chatmsg, 'token': '' });
+		postMsg(chatmsg);
 		}
 		
 	function ping(){
 		var chatmsg = "Pong!";
-		$.post('https://api.dubtrack.fm/chat/upcoming', { 'message': chatmsg, 'token': '' });
+		postMsg(chatmsg);
 		}
 
 	$('body').on('DOMNodeInserted', 'div.text', function () {
 		var msg = getChatMessage($(this));
 		var user = getChatUser($(this));
-
+if(!user == "Hero"){
 		if(msg.search('!hello') >= 0){ sayhello(user);}
 		if(msg.search('!ping') >= 0){ ping();}
+		}
 		console.log("Message: "+msg);
 		console.log("User: "+user);
 	});
