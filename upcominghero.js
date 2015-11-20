@@ -7,6 +7,7 @@ var skip = 0;
 var skipuser = 0;
 var uservotes = 0;
 var currentUser = "";
+var votedisabled = false;
 
 //Functions
 function getChatMessage(msg){
@@ -25,6 +26,10 @@ function getChatUser(user){
 		currentUser = user.children().children(".username").html();
 		return user.children().children(".username").html();
 	}else{ return currentUser; }
+}
+
+function getTotalUser(){
+	return $(".room-user-counter").text;
 }
 
 function postMsg(msg){
@@ -64,24 +69,24 @@ function skipvideo(vote){
 
 function voteskip(act){
 	var action = act;
-	switch(act){
-		case (act == "start"): 
-			skipuser = getTotalUser();
-			votedisabled = true;
-			postMsg("Voteskip started!");
-			break;
-		case (act =="end"): 
+	if(act == "start"){
+		skipuser = getTotalUser();
+		votedisabled = true;
+		postMsg('Voteskip started! Type "!voteyes" or "!voteno".');
+	}else{
+		if(act == "end"){
 			if(skip > 0){skipvideo("vote"); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
-			break;
-		case (act == "yes"): 
-			skip++; uservotes++;
-			break;
-		case (act == "no"): 
-			skip--; uservotes++;
-			break;
-		default: 
-			console.log("No Vote-Action");
-			break;
+		}else{
+			if(act == "yes"){
+				skip++; uservotes++;
+			}else{
+				if(act == "no"){
+					skip--; uservotes++;
+				}else{
+					console.log("No Vote-Action");
+				}
+			}
+		}
 	}
 }
 
@@ -127,6 +132,8 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	var user = getChatUser($(this));
 	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !mehskip, !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
+	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
+
 	if(user != "hero"){
 		//if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
 		if(msg.search('!racist') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
@@ -141,7 +148,6 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
 		if(msg.search('!commands') >= 0){ postMsg(commandlist); }
 	}
-	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
 
 	});
 
