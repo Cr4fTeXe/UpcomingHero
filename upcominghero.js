@@ -46,6 +46,11 @@ function ping(){
 	postMsg(chatmsg);
 }
 
+function yolo(){
+	var chatmsg = "Swag";
+	postMsg(chatmsg);
+}
+
 function skip(){
 	$(".skip-el").trigger("click");
 	postMsg("Successful Vote. Video skipped!");
@@ -79,6 +84,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	if(user != "Hero"){
 		if(msg.search('!hello') >= 0){ sayhello(user); }
+		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
 		if(msg.search('!skipyes') >= 0){ voteskip("yes"); }
