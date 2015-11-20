@@ -80,6 +80,17 @@ function voteskip(act){
 }
 
 $('body').on('DOMNodeInserted', 'div.text', function () {
+	var rank = $(this).parent().parent().parent().attr("class");
+	var userrank = "";
+	var staff = false;
+
+	if(rank.search('isMod') >= 0){userrank = "Mod"; staff = true;}
+	if(rank.search('isVIP') >= 0){userrank = "VIP";}
+	if(rank.search('isManager') >= 0){userrank = "Manager"; staff = true;}
+	if(rank.search('isCo-owner') >= 0){userrank = "Co-owner"; staff = true;}
+	if(rank.search('isResident-dj') >= 0){userrank = "Resident-dj";}
+	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
+
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
 	var commandlist = "!hello, !yolo, !ping, !skip (Staff only), !voteskip, !voteyes, !voteno, !commands";
@@ -91,7 +102,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
-		if(user == "Cr4fTeXe" && msg.search('!skip')){ skip(); }
+		if(staff == true && msg.search('!skip') >= 0){ skip(); }
 		if(msg.search('!commands') >= 0){ postMsg(commandlist); }
 	}
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
