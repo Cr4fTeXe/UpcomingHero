@@ -82,7 +82,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!skipyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!skipno') >= 0){ voteskip("no"); }
 	}
-	if(skipuser == uservotes){voteskip("end"); votedisabled = false;}
+	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
 
 	});
 
