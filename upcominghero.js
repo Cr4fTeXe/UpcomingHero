@@ -103,6 +103,7 @@ $(".dubdown").on("change",".dub-counter", function(){mehskip();})
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
+	tooLong();
 	var rank = $(this).parent().parent().parent().attr("class");
 	var userrank = "";
 	var staff = false;
