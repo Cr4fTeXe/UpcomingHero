@@ -56,7 +56,7 @@ function fb(){
 	postMsg(chatmsg);
 }
 
-function skip(vote){
+function skipvideo(vote){
 	var vot = vote;
 	$(".skip-el").trigger("click");
 	if(vot = "vote"){ postMsg("Successful Vote. Video skipped!"); }
@@ -71,7 +71,7 @@ function voteskip(act){
 			postMsg("Voteskip started!");
 			break;
 		case (action =="end"): 
-			if(skip > 0){skip("vote"); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
+			if(skip > 0){skipvideo("vote"); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
 			break;
 		case (action == "yes"): 
 			skip++; uservotes++;
@@ -100,7 +100,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!hello, !yolo, !ping, !fb, !skip (Staff only), !voteskip, !voteyes, !voteno, !commands";
+	var commandlist = "!hello, !yolo, !ping, !skip (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
 	if(user != "hero"){
 		if(msg.search('!hello') >= 0){ sayhello(user); }
@@ -110,7 +110,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
-		if(staff == true && msg.search('!skip') >= 0){ skip(); }
+		if(staff == true && msg.search('!skip') >= 0){ skipvideo(); }
 		if(msg.search('!commands') >= 0){ postMsg(commandlist); }
 	}
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
