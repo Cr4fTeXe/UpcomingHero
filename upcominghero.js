@@ -8,6 +8,7 @@ var skipuser = 0;
 var uservotes = 0;
 var currentUser = "";
 
+//Functions
 function getChatMessage(msg){
 	var amsg = msg;
 	var user = amsg.children().children(".username").html();
@@ -63,19 +64,19 @@ function skipvideo(vote){
 
 function voteskip(act){
 	var action = act;
-	switch(action){
-		case (action == "start"): 
+	switch(act){
+		case (act == "start"): 
 			skipuser = getTotalUser();
 			votedisabled = true;
 			postMsg("Voteskip started!");
 			break;
-		case (action =="end"): 
+		case (act =="end"): 
 			if(skip > 0){skipvideo("vote"); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
 			break;
-		case (action == "yes"): 
+		case (act == "yes"): 
 			skip++; uservotes++;
 			break;
-		case (action == "no"): 
+		case (act == "no"): 
 			skip--; uservotes++;
 			break;
 		default: 
@@ -84,9 +85,16 @@ function voteskip(act){
 	}
 }
 
+//Meh-Skip
+$('.dubup', '.dubdown').on('change', function(){
+	var woot = $('.dubup .dubcounter').text;
+	var meh = $('.dubdown .dubcounter').text;
+	if(meh > woot && meh != 0){skipvideo();}
+})
+
+//Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	var rank = $(this).parent().parent().parent().attr("class");
-	console.log(rank);
 	var userrank = "";
 	var staff = false;
 	var votedisabled = false;
