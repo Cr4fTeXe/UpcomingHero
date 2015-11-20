@@ -73,6 +73,7 @@ function voteskip(action){
 }
 
 $('body').on('DOMNodeInserted', 'div.text', function () {
+	console.log("new message");
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
 
