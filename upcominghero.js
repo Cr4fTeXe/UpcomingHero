@@ -56,9 +56,10 @@ function fb(){
 	postMsg(chatmsg);
 }
 
-function skip(){
+function skip(vote){
+	var vot = vote;
 	$(".skip-el").trigger("click");
-	postMsg("Successful Vote. Video skipped!");
+	if(vot = "vote"){ postMsg("Successful Vote. Video skipped!"); }
 }
 
 function voteskip(act){
@@ -70,7 +71,7 @@ function voteskip(act){
 			postMsg("Voteskip started!");
 			break;
 		case (action =="end"): 
-			if(skip > 0){skip(); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
+			if(skip > 0){skip("vote"); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
 			break;
 		case (action == "yes"): 
 			skip++; uservotes++;
