@@ -96,7 +96,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	var user = getChatUser($(this));
 	var commandlist = "!hello, !yolo, !ping, !skip (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
-	if(user != "Hero"){
+	if(user != "hero"){
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
