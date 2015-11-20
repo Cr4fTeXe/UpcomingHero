@@ -91,7 +91,7 @@ function mehskip(){
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
 function hardwareinfo(){postMsg("This bot runs on the Raspberry Pi of Cr4fTeXe.");}
-function joinQueue(){ $(".play-song-link").trigger("click"); $(".close-browser").trigger("click");}
+function joinQueue(){ $(".play-song-link").trigger("click"); setTimeout(function(){$(".close-browser").trigger("click");},500); }
 function pauseQueue(){ $(".display-browser").trigger("click"); $(".pause-queue").trigger("click"); $(".close-browser").trigger("click");}
 function resumeQueue(){ $(".display-browser").trigger("click"); $(".pause-queue").trigger("click"); $(".close-browser").trigger("click");}
 function queuePlaylist(){ $(".display-browser").trigger("click"); setTimeout(function(){$(".playlist-564f9473bd566d23009ab305").trigger("click");},300); setTimeout(function(){$(".queue-playlist").trigger("click");},500); setTimeout(function(){$(".close-browser").trigger("click");},5000); }
