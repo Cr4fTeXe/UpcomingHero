@@ -86,12 +86,11 @@ function voteskip(act){
 }
 
 //Meh-Skip
-$('.dubup', '.dubdown').on('change', function(){
+$('.dubup, .dubdown').on('change', function(){
 	var woot = $('.dubup .dubcounter').text;
 	woot = parseInt(woot);
 	var meh = $('.dubdown .dubcounter').text;
 	meh = parseInt(meh);
-	console.log(woot + meh);
 	if(meh > woot && meh != 0){skipvideo();}
 })
 
