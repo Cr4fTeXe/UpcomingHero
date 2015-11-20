@@ -7,6 +7,7 @@ var skip = 0;
 var skipuser = 0;
 var uservotes = 0;
 var currentUser = "";
+var votedisabled = false;
 
 function getChatMessage(msg){
 	var amsg = msg;
