@@ -56,7 +56,8 @@ function skip(){
 	postMsg("Successful Vote. Video skipped!");
 }
 
-function voteskip(action){
+function voteskip(act){
+	var action = act;
 	switch(action){
 		case (action == "start"): 
 			skipuser = getTotalUser();
