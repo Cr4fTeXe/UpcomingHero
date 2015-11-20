@@ -37,6 +37,7 @@ function postMsg(msg){
 function sayhello(u){
 	var user = u;
 	var chatmsg = "Hello "+user+"!";
+	console.log(chatmsg);
 	postMsg(chatmsg);
 }
 
