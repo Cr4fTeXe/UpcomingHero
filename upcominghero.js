@@ -83,13 +83,11 @@ function voteskip(act){
 				var alle = getTotalUser();
 				skip++; uservotes++;
 				postMsg(uservotes+" out of "+alle+" voted.");
-				console.log(skip);
 			}else{
 				if(act == "no" && votedisabled == false){
 					skip--; uservotes++;
 					var alle = getTotalUser();
 					postMsg(uservotes+" out of "+alle+" voted.");
-					console.log(skip);
 				}else{
 					console.log("No Vote-Action");
 				}
@@ -102,21 +100,8 @@ function voteskip(act){
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
 	var meh = $('.dubdown > .dub-counter').html();
-	if(meh > woot && meh != 0){skipvideo();}
+	if(meh > woot && meh != 0){postMsg("Enough DubDowns. Video will be skipped!"); skipvideo();}else{postMsg("Not enough DubDowns. Video won't be skipped!");}
 }
-
-
-/*function randomImgur() {
-var urlRandom = "https://imgur.com/random";
-  $.ajax( {
-    url: urlRandom, context: document.window 
-  }).done(function() {
-      $(".randImg").attr("src", $(this).src);
-      var randImage = new Image();
-      randImage.src = $(this).url;
-      postMsg(randImage.src);
-  });
-}*/
 
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
@@ -142,7 +127,6 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	if(user != "hero"){
-		//if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
 		if(msg.search('!racist') >= 0 ||msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('obama') >= 0 ){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
