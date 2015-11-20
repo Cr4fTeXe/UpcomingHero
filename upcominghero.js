@@ -67,6 +67,8 @@ function skipvideo(vote){
 	if(vot = "vote"){ postMsg("Successful Vote. Video skipped!"); }
 }
 
+function votedisabledfalse(){ votedisabled = false;}
+
 function voteskip(act){
 	var action = act;
 	if(act == "start" && votedisabled == false){
@@ -148,7 +150,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!fb') >= 0){ fb(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!mehskip') >= 0){ mehskip(); }
-		if(msg.search('!voteskip') >= 0){ votedisabled = false; voteskip("start"); }
+		if(msg.search('!voteskip') >= 0){ votedisabledfalse(); voteskip("start"); }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
