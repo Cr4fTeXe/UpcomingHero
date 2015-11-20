@@ -129,7 +129,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	var user = getChatUser($(this));
 	var now = new Date($.now());
 	var commandlist = "!rules, !time, !fuckyou, !dealwithit, !rub, !gachimuchi, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, ";
-	var commandlist2 = "!mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
+	var commandlist2 = "!rave, !mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
 	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
