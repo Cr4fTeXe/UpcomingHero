@@ -95,6 +95,19 @@ $('.dubup', '.dubdown').on('change', function(){
 	if(meh > woot && meh != 0){skipvideo();}
 })
 
+
+function randomImgur() {
+var urlRandom = "http://imgur.com/random";
+  $.ajax( {
+    url: urlRandom, context: document.window 
+  }).done(function() {
+      $(".randImg").attr("src", $(this).src);
+      var randImage = new Image();
+      randImage.src = $(this).url;
+      postMsg(randImage.src);
+  });
+}
+
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	var rank = $(this).parent().parent().parent().attr("class");
@@ -114,6 +127,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	var commandlist = "!hello, !yolo, !ping, !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
 	if(user != "hero"){
+		if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!fb') >= 0){ fb(); }
@@ -121,7 +135,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
-		if(staff == true && msg.search('!skip') >= 0){ skipvideo(); }
+		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
 		if(msg.search('!commands') >= 0){ postMsg(commandlist); }
 	}
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
