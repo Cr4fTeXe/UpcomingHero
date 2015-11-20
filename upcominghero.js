@@ -127,7 +127,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
 	var now = new Date($.now());
-	var commandlist = "!rules, !time, !fuckyou, !dealwithit, !rub, !gachimuchi, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
+	var commandlist = "!rules, !time, !fuckyou, !dealwithit, !rub, !gachimuchi, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
 	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
@@ -159,7 +159,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!pauseQueue') >= 0 && staff == true){ pauseQueue(); }
 		if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
 		if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
-		if(msg.search('!commands') >= 0){ postMsg(commandlist); }
+		if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
 	}
 
 	});
