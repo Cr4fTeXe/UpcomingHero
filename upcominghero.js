@@ -97,7 +97,7 @@ $('.dubup', '.dubdown').on('change', function(){
 
 
 function randomImgur() {
-var urlRandom = "http://imgur.com/random";
+var urlRandom = "https://imgur.com/random";
   $.ajax( {
     url: urlRandom, context: document.window 
   }).done(function() {
