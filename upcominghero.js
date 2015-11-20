@@ -71,6 +71,7 @@ function voteskip(act){
 	var action = act;
 	if(act == "start"){
 		skipuser = getTotalUser();
+		skipuser = parseInt(skipuser);
 		votedisabled = true;
 		postMsg('Voteskip started! Type "!voteyes" or "!voteno".');
 	}else{
@@ -98,10 +99,10 @@ function voteskip(act){
 
 //Meh-Skip
 function mehskip(){
-	var woot = $('.dubup .dubcounter').text;
+	var woot = $('.dubup .dubcounter').html();
 	woot = parseInt(woot);
 	console.log(woot);
-	var meh = $('.dubdown .dubcounter').text;
+	var meh = $('.dubdown .dubcounter').html();
 	meh = parseInt(meh);
 	console.log(meh);
 	if(meh > woot && meh != 0){skipvideo();}
