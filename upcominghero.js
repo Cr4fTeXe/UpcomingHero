@@ -7,7 +7,7 @@ var skip = 0;
 var skipuser = 0;
 var uservotes = 0;
 var currentUser = "";
-var votedisabled = false;
+var votedisabled = true;
 
 //Functions
 function getChatMessage(msg){
@@ -69,22 +69,21 @@ function skipvideo(vote){
 
 function voteskip(act){
 	var action = act;
-	if(act == "start"){
+	if(act == "start" && votedisabled == false){
 		skipuser = getTotalUser();
 		skipuser = parseInt(skipuser);
-		votedisabled = true;
 		postMsg('Voteskip started! Type "!voteyes" or "!voteno".');
 	}else{
 		if(act == "end"){
-			if(skip > 0){skipvideo("vote"); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
+			if(skip > 0){ uservotes = 0; skip = 0; skipuser = 0; votedisabled = true; skipvideo("vote");}else{ uservotes = 0; skip = 0; skipuser = 0; votedisabled = true; postMsg("Vote failed!");}
 		}else{
-			if(act == "yes"){
+			if(act == "yes" && votedisabled == false){
 				var alle = getTotalUser();
 				skip++; uservotes++;
 				postMsg(uservotes+" out of "+alle+" voted.");
 				console.log(skip);
 			}else{
-				if(act == "no"){
+				if(act == "no" && votedisabled == false){
 					skip--; uservotes++;
 					var alle = getTotalUser();
 					postMsg(uservotes+" out of "+alle+" voted.");
@@ -139,7 +138,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	var user = getChatUser($(this));
 	var commandlist = "!hello, !yolo, !ping, !fb, !racist, !mehskip, !skipvideo (Staff only), !voteskip, !voteyes, !voteno, !commands";
 
-	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){voteskip("end"); votedisabled = false;}
+	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	if(user != "hero"){
 		//if(msg.search('!random') >= 0 && staff == true){ randomImgur(); }
@@ -149,7 +148,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!fb') >= 0){ fb(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!mehskip') >= 0){ mehskip(); }
-		if(msg.search('!voteskip') >= 0){ voteskip("start"); }
+		if(msg.search('!voteskip') >= 0){ votedisabled = false; voteskip("start"); }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
