@@ -106,6 +106,8 @@ function tooLong(){
 		skip();
 		postMsg("Video skipped, because it was too long!");
 		status = false;
+	}else{
+		postMsg("Video is less than 12 minutes, so it won't be skipped!");
 	}
 }
 
