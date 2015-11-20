@@ -99,6 +99,8 @@ function queuePlaylist(){ $(".display-browser").trigger("click"); $(".playlist_i
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
 
+$(".sec").on("change", function(){ if(parseInt($(".min").html()) > 12){postMsg("Video skipped, because it was too long!"); skip();}})
+
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	var rank = $(this).parent().parent().parent().attr("class");
