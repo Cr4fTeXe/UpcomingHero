@@ -118,7 +118,8 @@ var urlRandom = "https://imgur.com/random";
   });
 }*/
 
-$(".dub-counter").on("change", function(){mehskip();})
+$(".dubup").on("change",".dub-counter", function(){mehskip();})
+$(".dubdown").on("change",".dub-counter", function(){mehskip();})
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
