@@ -81,6 +81,7 @@ function voteskip(act){
 
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	var rank = $(this).parent().parent().parent().attr("class");
+	console.log(rank);
 	var userrank = "";
 	var staff = false;
 
