@@ -117,7 +117,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
+	var commandlist = "!rub, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
 	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
