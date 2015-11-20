@@ -29,7 +29,7 @@ function getChatUser(user){
 }
 
 function getTotalUser(){
-	return $(".room-user-counter").text;
+	return $(".room-user-counter").html();
 }
 
 function postMsg(msg){
