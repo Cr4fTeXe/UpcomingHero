@@ -76,7 +76,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
 
-	if(!user == "Hero"){
+	if(user != "Hero"){
 		console.log("after if");
 		if(msg.search('!hello') >= 0){ sayhello(user); console.log("hello"); console.log(user); }
 		if(msg.search('!ping') >= 0){ ping(); }
