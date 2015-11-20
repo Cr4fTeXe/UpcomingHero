@@ -55,6 +55,7 @@ function voteskip(action){
 		case (action == "start"): 
 			skipuser = getTotalUser();
 			votedisabled = true;
+			postMsg("Voteskip started!");
 			break;
 		case (action =="end"): 
 			if(skip > 0){skip(); uservotes = 0; skip = 0; skipuser = 0;}else{postMsg("Vote failed!"); uservotes = 0; skip = 0; skipuser = 0;}
@@ -78,7 +79,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(user != "Hero"){
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!ping') >= 0){ ping(); }
-		if(msg.search('!voteskip') >= 0){ voteskip("start"); }
+		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
 		if(msg.search('!skipyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!skipno') >= 0){ voteskip("no"); }
 		if(user == "Cr4fTeXe" && msg.search('!skip')){skip();}
