@@ -98,18 +98,13 @@ function queuePlaylist(){ $(".display-browser").trigger("click"); $(".playlist_i
 function tooLong(){ 
 	var mins = $(".min").html();
 	var status = true;
-	console.log(mins);
 	mins = parseInt(mins);
-	console.log("mins");
-	console.log(mins);
 	if(mins > 12 && status == true){
 		skip();
 		postMsg("Video skipped, because it was too long!");
 		status = false;
-	}else{
-		postMsg("Video is less than 12 minutes, so it won't be skipped!");
+	}else{ postMsg("Video is less than 12 minutes, so it won't be skipped!"); }
 	}
-}
 
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
