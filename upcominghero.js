@@ -18,57 +18,45 @@ function getChatMessage(msg){
 	amsghtml = amsghtml.replace("</p>"," ");
 	amsghtml = amsghtml.replace('<a href="#" class="username">'+user+'</a>', '');
 	return amsghtml;
-}
-
+	}
 function getChatUser(user){
 	var user = user;
 	if(user.children().children(".username").html()){
 		currentUser = user.children().children(".username").html();
 		return user.children().children(".username").html();
 	}else{ return currentUser; }
-}
-
-function getTotalUser(){
-	return $(".room-user-counter").html();
-}
-
+	}
+function getTotalUser(){ return $(".room-user-counter").html(); }
 function postMsg(msg){
 	var message = msg;
 	$("#chat-txt-message").val(message);
 	var e = $.Event("keydown");
 	e.which = 13;
 	$("#chat-txt-message").trigger(e);
-}
-
+	}
 function sayhello(u){
 	var user = u;
 	var chatmsg = "Hello "+user+"!";
 	postMsg(chatmsg);
-}
-
+	}
 function ping(){
 	var chatmsg = "Pong!";
 	postMsg(chatmsg);
-}
-
+	}
 function yolo(){
 	var chatmsg = "Swag";
 	postMsg(chatmsg);
-}
-
+	}
 function fb(){
 	var chatmsg = "Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
 	postMsg(chatmsg);
-}
-
+	}
 function skipvideo(vote){
 	var vot = vote;
 	$(".skip-el").trigger("click");
 	if(vot = "vote"){ postMsg("Successful Vote. Video skipped!"); }
-}
-
+	}
 function votedisabledfalse(){ votedisabled = false;}
-
 function voteskip(act){
 	var action = act;
 	if(act == "start" && votedisabled == false){
@@ -94,14 +82,14 @@ function voteskip(act){
 			}
 		}
 	}
-}
-
-//Meh-Skip
+	}
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
 	var meh = $('.dubdown > .dub-counter').html();
 	if(meh > woot && meh != 0){postMsg("Enough DubDowns. Video will be skipped!"); skipvideo();}else{postMsg("Not enough DubDowns. Video won't be skipped!");}
-}
+	}
+function love(){postMsg(":heart: Love is in the Air :heart:");}
+function hardwareinfo(){postMsg("This bot runs on the Raspberry Pi of Cr4fTeXe.");}
 
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
@@ -127,11 +115,13 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	if(user != "hero"){
+		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0){ love(); }
+		if(msg.search('!hardwareinfo')){ hardwareinfo(); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!fb') >= 0){ fb(); }
-		if(msg.search('!racist') >= 0 ||msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('obama') >= 0 ){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
+		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('obama') >= 0 ){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!mehskip') >= 0){ mehskip(); }
 		if(msg.search('!voteskip') >= 0){ votedisabledfalse(); voteskip("start"); }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
