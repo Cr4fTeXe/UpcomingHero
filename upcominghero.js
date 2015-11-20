@@ -51,6 +51,11 @@ function yolo(){
 	postMsg(chatmsg);
 }
 
+function fb(){
+	var chatmsg = "Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
+	postMsg(chatmsg);
+}
+
 function skip(){
 	$(".skip-el").trigger("click");
 	postMsg("Successful Vote. Video skipped!");
@@ -87,6 +92,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(user != "Hero"){
 		if(msg.search('!hello') >= 0){ sayhello(user); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
+		if(msg.search('!fb') >= 0){ fb(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!voteskip') >= 0){ if(votedisabled == false){voteskip("start");} }
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
