@@ -123,6 +123,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	if(user != "hero"){
+		if(msg.search('!rub') >= 0){ postMsg("http://static2.fjcdn.com/thumbnails/comments/5082699+_057afdd878601db2f01dbfc4fd6b3872.gif");}
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!hardwareinfo') >= 0){ hardwareinfo(); }
 		if(msg.search('!hello') >= 0){ sayhello(user); }
