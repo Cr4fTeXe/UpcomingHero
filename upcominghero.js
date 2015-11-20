@@ -28,7 +28,7 @@ function getChatUser(user){
 
 function postMsg(msg){
 	var message = msg;
-	$("#chat-txt-message").val() = message;
+	$("#chat-txt-message").val(message);
 	var e = $.Event("keydown");
 	e.which = 13;
 	$("#chat-txt-message").trigger(e);
