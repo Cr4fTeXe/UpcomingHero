@@ -99,6 +99,8 @@ function tooLong(){
 	var mins = $(".min").html();
 	console.log(mins);
 	mins = parseInt(mins);
+	console.log("mins");
+	console.log(mins);
 	if(mins > 12){
 		skip();
 		postMsg("Video skipped, because it was too long!");
