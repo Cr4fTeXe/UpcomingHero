@@ -117,12 +117,14 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this));
 	var user = getChatUser($(this));
-	var commandlist = "!rub, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
-	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue";
+	var now = $.now();
+	var commandlist = "!time, !rub, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, !mehskip, !voteskip, !voteyes, !voteno, !commands";
+	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	if(user != "hero"){
+		if(msg.search('!time') >= 0){ postMsg(now);}
 		if(msg.search('!rub') >= 0){ postMsg("http://static2.fjcdn.com/thumbnails/comments/5082699+_057afdd878601db2f01dbfc4fd6b3872.gif");}
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!hardwareinfo') >= 0){ hardwareinfo(); }
@@ -137,6 +139,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
+		if(msg.search('!shutdown') >= 0 && staff == true && (user == "Cr4ftexe" || user == "1337")){ window.close(); }
 		if(msg.search('!queuePlaylist') >= 0 && staff == true && user == "Cr4ftexe"){ queuePlaylist(); }
 		if(msg.search('!joinQueue') >= 0 && staff == true){ joinQueue(); }
 		if(msg.search('!pauseQueue') >= 0 && staff == true){ pauseQueue(); }
