@@ -94,7 +94,7 @@ function hardwareinfo(){postMsg("This bot runs on the Raspberry Pi of Cr4fTeXe."
 function joinQueue(){ $(".play-song-link").trigger("click"); $(".close-browser").trigger("click");}
 function pauseQueue(){ $(".display-browser").trigger("click"); $(".pause-queue").trigger("click"); $(".close-browser").trigger("click");}
 function resumeQueue(){ $(".display-browser").trigger("click"); $(".pause-queue").trigger("click"); $(".close-browser").trigger("click");}
-function queuePlaylist(){ $(".display-browser").trigger("click"); $(".playlist_icon").trigger("click"); $(".queue-playlist").trigger("click"); $(".close-browser").trigger("click"); }
+function queuePlaylist(){ $(".display-browser").trigger("click"); setTimeout(function(){$(".playlist-564f9473bd566d23009ab305").trigger("click");},300); setTimeout(function(){$(".queue-playlist").trigger("click");},500); setTimeout(function(){$(".close-browser").trigger("click");},1000); }
 function tooLong(){ 
 	var mins = $(".min").html();
 	var status = true;
