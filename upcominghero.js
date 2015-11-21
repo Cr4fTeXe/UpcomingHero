@@ -116,7 +116,7 @@ $(".dubdown").on("change",".dub-counter", function(){mehskip();})
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	autoJoinQueue();
-	if(inAutoQueue == true){ joinQueue();}else{ pauseQueue();}
+	if(inAutoQueue == true){ joinQueue();}else{ if(inAutoQueue == false){pauseQueue();}}
 
 	var rank = $(this).parent().parent().parent().attr("class");
 	var userrank = "";
