@@ -8,6 +8,7 @@ var skipuser = 0;
 var uservotes = 0;
 var currentUser = "";
 var votedisabled = true;
+var inAutoQueue = false;
 
 //Functions
 function getChatMessage(msg){
@@ -106,6 +107,7 @@ function tooLong(){
 		status = false;
 	}else{ postMsg("Video is less than 12 minutes, so it won't be skipped!"); }
 	}
+function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue = true;}else{inAutoQueue = false;}}
 
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
@@ -113,6 +115,9 @@ $(".dubdown").on("change",".dub-counter", function(){mehskip();})
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
+	autoJoinQueue();
+	if(inAutoQueue == true){ joinQueue();}else{ pauseQueue();}
+
 	var rank = $(this).parent().parent().parent().attr("class");
 	var userrank = "";
 	var staff = false;
