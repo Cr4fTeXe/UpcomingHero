@@ -112,6 +112,7 @@ $('.progressBg').on("change", function(){ if($(this).attr("style") == "wídth: 0
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
+	$(".dubup").trigger("click");
 	autoJoinQueue();
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}
 
