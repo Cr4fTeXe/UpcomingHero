@@ -2,10 +2,10 @@ $(document).ready(function(){
 $(".player_container").remove();
 
 //Config-Menu
-$("body").prepend('<link rel="stylesheet" type="text/css" href="https://rawgit.com/Cr4fTeXe/Dubtrack-YT-Playlist-Importer/master/yt-importer.css">');
+/*$("body").prepend('<link rel="stylesheet" type="text/css" href="https://rawgit.com/Cr4fTeXe/Dubtrack-YT-Playlist-Importer/master/yt-importer.css">');
 $(".header-right-navigation").append($('<div class="yt-import"><img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Settings-2-icon.png" alt="import"></div>'));
 $("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
-
+*/
 
 var i = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false;
 
@@ -122,7 +122,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(rank.search('isCo-owner') >= 0){userrank = "Co-owner"; staff = true;}
 	if(rank.search('isManager') >= 0){userrank = "Manager"; staff = true;}
 	if(rank.search('isMod') >= 0){userrank = "Mod"; staff = true;}
-	if(rank.search('isVIP') >= 0){userrank = "VIP";}
+	if(rank.search('isVIP') >= 0){userrank = "VIP"; staff = true;}
 	if(rank.search('isResident-dj') >= 0){userrank = "Resident-dj";}
 	if(rank.search('isDefault') >= 0){userrank = "Default";}
 
@@ -153,7 +153,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!rave') >= 0){ postMsg("http://i.imgur.com/Rxv5Qnu.gif");}
 		if(msg.search('!1738') >= 0){ postMsg("I'm like: Hey, what's up, hello.");}
 		if(msg.search('!mehskip') >= 0){ mehskip(); }
-		if(msg.search('!voteskip') >= 0){ votedisabledfalse(); voteskip("start"); } //Immer noch verbuggt
+		if(msg.search('!voteskip') >= 0 && staff == true){ votedisabledfalse(); voteskip("start"); } //Immer noch verbuggt
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
