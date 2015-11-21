@@ -108,6 +108,8 @@ function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
 
+$('.progressBg').on("change", function(){ if($(this).attr("style") == "wídth: 0%;"){$(".dubup").trigger("click");} })
+
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	autoJoinQueue();
@@ -125,7 +127,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
 	var commandlist = "!rules, !time, !fuckyou, !dealwithit, !rub, !gachimuchi, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, ";
-	var commandlist2 = "!rave, !mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
+	var commandlist2 = "!rave, !1738, !mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
 	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
