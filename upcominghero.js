@@ -1,14 +1,13 @@
 $(document).ready(function(){
-console.log("UpcomingHero succesfully loaded!");
 $(".player_container").remove();
 
-var i = 0;
-var skip = 0;
-var skipuser = 0;
-var uservotes = 0;
-var currentUser = "";
-var votedisabled = true;
-var inAutoQueue = false;
+//Config-Menu
+$("body").prepend('<link rel="stylesheet" type="text/css" href="https://rawgit.com/Cr4fTeXe/Dubtrack-YT-Playlist-Importer/master/yt-importer.css">');
+$(".header-right-navigation").append($('<div class="yt-import"><img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Settings-2-icon.png" alt="import"></div>'));
+$("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
+
+
+var i = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false;
 
 //Functions
 function getChatMessage(msg){
@@ -60,7 +59,6 @@ function skipvideo(vote){
 	}
 function votedisabledfalse(){ votedisabled = false;}
 function voteskip(act){
-	var action = act;
 	if(act == "start" && votedisabled == false){
 		skipuser = getTotalUser();
 		skipuser = parseInt(skipuser);
@@ -78,9 +76,7 @@ function voteskip(act){
 					skip--; uservotes++;
 					var alle = getTotalUser();
 					postMsg(uservotes+" out of "+alle+" voted.");
-				}else{
-					console.log("No Vote-Action");
-				}
+				}else{ console.log("No Vote-Action"); }
 			}
 		}
 	}
@@ -112,33 +108,29 @@ function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue
 $(".dubup").on("change",".dub-counter", function(){mehskip();})
 $(".dubdown").on("change",".dub-counter", function(){mehskip();})
 
-
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	autoJoinQueue();
-	if(inAutoQueue == true){ joinQueue();}
+	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}
 
-	var rank = $(this).parent().parent().parent().attr("class");
-	var userrank = "";
-	var staff = false;
-	var votedisabled = false;
-
+	//Set userrank and staff
+	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
+	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
+	if(rank.search('isCo-owner') >= 0){userrank = "Co-owner"; staff = true;}
+	if(rank.search('isManager') >= 0){userrank = "Manager"; staff = true;}
 	if(rank.search('isMod') >= 0){userrank = "Mod"; staff = true;}
 	if(rank.search('isVIP') >= 0){userrank = "VIP";}
-	if(rank.search('isManager') >= 0){userrank = "Manager"; staff = true;}
-	if(rank.search('isCo-owner') >= 0){userrank = "Co-owner"; staff = true;}
 	if(rank.search('isResident-dj') >= 0){userrank = "Resident-dj";}
-	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
+	if(rank.search('isDefault') >= 0){userrank = "Default";}
 
-	var msg = getChatMessage($(this));
-	var user = getChatUser($(this));
-	var now = new Date($.now());
+	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
 	var commandlist = "!rules, !time, !fuckyou, !dealwithit, !rub, !gachimuchi, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, ";
 	var commandlist2 = "!rave, !mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
 	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
+	//Commands + function-calls
 	if(user != "hero" && user != "cyberpixlcraft"){
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
@@ -157,7 +149,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!rave') >= 0){ postMsg("http://i.imgur.com/Rxv5Qnu.gif");}
 		if(msg.search('!mehskip') >= 0){ mehskip(); }
-		if(msg.search('!voteskip') >= 0){ votedisabledfalse(); voteskip("start"); }
+		if(msg.search('!voteskip') >= 0){ votedisabledfalse(); voteskip("start"); } //Immer noch verbuggt
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
 		if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
@@ -168,8 +160,9 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
 		if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
 		if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); postMsg(commandlist2); }
-	}
+		}
 
 	});
 
+console.log("UpcomingHero succesfully loaded!");
 })
