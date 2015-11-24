@@ -84,7 +84,7 @@ function voteskip(act){
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
 	var meh = $('.dubdown > .dub-counter').html();
-	if(meh > woot && meh != 0){postMsg("Enough DubDowns. Video will be skipped!"); skipvideo();}else{postMsg("Not enough DubDowns. Video won't be skipped!");}
+	if(meh > woot && meh != 0){postMsg("Enough DubDowns. Video will be skipped!"); skipvideo();}else{}
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
 function hardwareinfo(){postMsg("This bot runs on the Raspberry Pi of Cr4fTeXe.");}
@@ -114,6 +114,7 @@ $('.progressBg').on("change", function(){ if($(this).attr("style") == "wídth: 0
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	$(".dubup").trigger("click");
 	autoJoinQueue();
+	mehskip();
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}
 
 	//Set userrank and staff
@@ -152,7 +153,6 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!rave') >= 0){ postMsg("http://i.imgur.com/Rxv5Qnu.gif");}
 		if(msg.search('!1738') >= 0){ postMsg("I'm like: Hey, what's up, hello.");}
-		if(msg.search('!mehskip') >= 0){ mehskip(); }
 		if(msg.search('!voteskip') >= 0 && staff == true){ votedisabledfalse(); voteskip("start"); } //Immer noch verbuggt
 		if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
 		if(msg.search('!voteno') >= 0){ voteskip("no"); }
