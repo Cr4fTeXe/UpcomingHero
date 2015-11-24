@@ -154,7 +154,8 @@ var msgoption = getCommandOptions(msg);
 	if(user != "hero" && user != "cyberpixlcraft" && user != "1337")
 	{	
 		mehskip();
-
+		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
+		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 	if(msg.search('!') >=0){
 		console.log(msg);
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
@@ -164,17 +165,14 @@ var msgoption = getCommandOptions(msg);
 		if(msg.search('!dealwithit') >= 0){ postMsg("http://i.imgur.com/KtIcXyL.gif");}
 		if(msg.search('!rub') >= 0){ postMsg("http://static2.fjcdn.com/thumbnails/comments/5082699+_057afdd878601db2f01dbfc4fd6b3872.gif");}
 		if(msg.search('!gachimuchi') >= 0){ postMsg("http://booru.ehkzai.com/index.php?q=/image/6665.gif");}
-		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!hardwareinfo') >= 0){ hardwareinfo(); }
 		if(msg.search('!hello') >= 0 && commandoption == "1"){ sayhello(user); }
 		if(msg.search('!hello') >= 0 && commandoption == "2"){ postMsg("Welcome to the UpcomingRecords Community :D"); }
 		if(msg.search('!bye') >= 0 ){ postMsg("See you later, Adios, Auf Wiedersehen, Au Revoir, Ciao, Tot ziens, Adjö, Farvel, Poka, Sayōnara, Namaste, Alweda, Näkemiin"); }
-
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!fb') >= 0){ fb(); }
 		if(msg.search('!dubx') >= 0){ dubx(); }
-		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('!rave') >= 0){ postMsg("http://i.imgur.com/Rxv5Qnu.gif");}
 		if(msg.search('!1738') >= 0){ postMsg("I'm like: Hey, what's up, hello.");}
 		if(msg.search('!voteskip') >= 0 && staff == true){ votedisabledfalse(); voteskip("start"); } //Immer noch verbuggt
