@@ -8,7 +8,7 @@ $("body").append($('<div class="import-input"><div class="import-inner"><span cl
 */
 
 var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = "";
-
+var autoFB = true;
 //Functions
 function getChatMessage(msg){
 	var amsg = msg;
@@ -190,5 +190,11 @@ var msgoption = getCommandOptions(msg);
 
 	});
 
+        setInterval(function () {
+            if(autoFB === true) {
+            fb();
+            }
+            },
+            1000 * 60 * 70);
 console.log("UpcomingHero succesfully loaded!");
 })
