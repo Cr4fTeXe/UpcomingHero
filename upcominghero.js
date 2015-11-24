@@ -127,7 +127,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(rank.search('isDefault') >= 0){userrank = "Default";}
 
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
-	var commandlist = "!rules, !time, !fuckyou, !dealwithit, !rub, !gachimuchi, !love, !hardwareinfo, !hello, !yolo, !ping, !fb, !dubx, !racist, ";
+	var commandlist = "Commands: http://upcomingrecords.com/commands/";
 	var commandlist2 = "!rave, !1738, !mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
 	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
 
