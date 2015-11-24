@@ -54,6 +54,12 @@ function sayhello(u){
 	var chatmsg = "Hello "+user+"!";
 	postMsg(chatmsg);
 	}
+function wb(u){
+	var user = u;
+	var chatmsg = "welcome back "+user+"!";
+	postMsg(chatmsg);
+	}
+	
 function ping(){
 	var chatmsg = "Pong!";
 	postMsg(chatmsg);
@@ -156,6 +162,7 @@ var msgoption = getCommandOptions(msg);
 		mehskip();
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
+		if(msg.search('back') >= 0){ wb(user); }
 	if(msg.search('!') >=0){
 		console.log(msg);
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
