@@ -26,7 +26,7 @@ function getChatUser(user){
 		return user.children().children(".username").html();
 	}else{ return currentUser; }
 	}
-function getCommandOption(message){ 	
+function getCommandOptions(message){ 	
 	var msg = message;
 	var msgarray = msg.split(" ");
 	var commandoption = "";
