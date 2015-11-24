@@ -167,7 +167,9 @@ var msgoption = getCommandOptions(msg);
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!hardwareinfo') >= 0){ hardwareinfo(); }
 		if(msg.search('!hello') >= 0 && commandoption == "1"){ sayhello(user); }
-		if(msg.search('!hello') >= 0 && commandoption == "2"){ postMsg("Hello there fgt :)"); }
+		if(msg.search('!hello') >= 0 && commandoption == "2"){ postMsg("Welcome to the UpcomingRecords Community :D"); }
+		if(msg.search('!bye') >= 0 ){ postMsg("See you later, Adios, Auf Wiedersehen, Au Revoir, Ciao, Tot ziens, Adjö, Farvel, Poka, Sayōnara, Namaste, Alweda, Näkemiin"); }
+
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!fb') >= 0){ fb(); }
@@ -185,7 +187,7 @@ var msgoption = getCommandOptions(msg);
 		if(msg.search('!pauseQueue') >= 0 && staff == true){ pauseQueue(); }
 		if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
 		if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
-		if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); postMsg(commandlist2); }
+		if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
 		}}
 
 	});
