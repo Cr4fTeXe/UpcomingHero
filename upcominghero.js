@@ -83,9 +83,7 @@ function voteskip(act){
 	}
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
-	window.alert(woot);
 	var meh = $('.dubdown > .dub-counter').html();
-	window.alert(meh);
 	if(meh > woot && meh > 1 && mehskipx==0){mehskipx = 1; postMsg("Enough DubDowns. Video will be skipped!"); skipvideo(); mehskipx = 0;}else{}
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
