@@ -134,6 +134,8 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	//Commands + function-calls
+	if(msg.search('!') >=0)
+	{	
 	if(user != "hero" && user != "cyberpixlcraft"){
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
@@ -164,7 +166,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
 		if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
 		if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); postMsg(commandlist2); }
-		}
+		}}
 
 	});
 
