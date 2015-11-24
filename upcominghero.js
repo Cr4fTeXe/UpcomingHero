@@ -136,6 +136,21 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	//Commands + function-calls
+	var msgarray = msg.split(" ");
+	var commandoption = "";
+	$.each(msgarray, function(index, value){
+		console.log(index+": "+value);
+		var fierst = value.charAt(0);
+		var laest = value.slice(-1);
+		if(fierst == "[" && laest == "]"){
+			commandoption = value.replace("[", "");
+			commandoption = commandoption.replace("]", "");
+		}
+	}).done(console.log(commandoption));
+
+
+
+
 	if(user != "hero" && user != "cyberpixlcraft" && user!= 1337)
 	{	
 		mehskip();
