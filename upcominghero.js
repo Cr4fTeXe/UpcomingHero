@@ -143,7 +143,6 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
 	var commandlist = "Commands: http://upcomingrecords.com/commands/";
-	var commandlist2 = "!rave, !1738, !mehskip, !voteskip, !voteyes, !voteno, !commands / !help";
 	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
 
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
