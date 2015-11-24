@@ -7,8 +7,7 @@ $(".header-right-navigation").append($('<div class="yt-import"><img src="http://
 $("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
 */
 
-var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false;
-	var commandoption = "";
+var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = "";
 
 //Functions
 function getChatMessage(msg){
@@ -37,8 +36,8 @@ function getCommandOptions(message){
 		if(fierst == "[" && laest == "]"){
 			commandoption = value.replace("[", "");
 			commandoption = commandoption.replace("]", "");
+			return commandoption;
 		}
-		return commandoption;
 	})
 	console.log(commandoption);
 }
@@ -99,9 +98,7 @@ function voteskip(act){
 	}
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
-	console.log(woot);
 	var meh = $('.dubdown > .dub-counter').html();
-	console.log(meh);
 	if(meh > woot && meh > 1 && mehskipx==0){mehskipx = 1; postMsg("Enough DubDowns. Video will be skipped!"); skipvideo(); mehskipx = 0;}else{}
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
