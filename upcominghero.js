@@ -7,7 +7,7 @@ $(".header-right-navigation").append($('<div class="yt-import"><img src="http://
 $("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
 */
 
-var i = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false;
+var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false;
 
 //Functions
 function getChatMessage(msg){
@@ -83,8 +83,10 @@ function voteskip(act){
 	}
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
+	window.alert(woot);
 	var meh = $('.dubdown > .dub-counter').html();
-	if(meh > woot && meh != 0){postMsg("Enough DubDowns. Video will be skipped!"); skipvideo();}else{}
+	window.alert(meh);
+	if(meh > woot && meh > 1 && mehskipx==0){mehskipx = 1; postMsg("Enough DubDowns. Video will be skipped!"); skipvideo(); mehskipx = 0;}else{}
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
 function hardwareinfo(){postMsg("This bot runs on the Raspberry Pi of Cr4fTeXe.");}
