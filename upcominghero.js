@@ -116,7 +116,6 @@ $('.progressBg').on("change", function(){ if($(this).attr("style") == "wídth: 0
 $('body').on('DOMNodeInserted', 'div.text', function () {
 	$(".dubup").trigger("click");
 	autoJoinQueue();
-	mehskip();
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}
 
 	//Set userrank and staff
@@ -137,9 +136,10 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	//Commands + function-calls
-	if(msg.search('!') >=0)
+	if(user != "hero" && user != "cyberpixlcraft" && user!= 1337)
 	{	
-	if(user != "hero" && user != "cyberpixlcraft"){
+		mehskip();
+	if(msg.search('!') >=0){
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
 		if(msg.search('!time') >= 0){ postMsg(now);}
