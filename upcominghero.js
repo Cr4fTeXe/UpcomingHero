@@ -146,7 +146,8 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 			commandoption = value.replace("[", "");
 			commandoption = commandoption.replace("]", "");
 		}
-	}).done(console.log(commandoption));
+	})
+	console.log(commandoption);
 
 
 
