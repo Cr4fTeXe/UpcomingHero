@@ -8,6 +8,7 @@ $("body").append($('<div class="import-input"><div class="import-inner"><span cl
 */
 
 var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false;
+	var commandoption = "";
 
 //Functions
 function getChatMessage(msg){
@@ -29,7 +30,6 @@ function getChatUser(user){
 function getCommandOptions(message){ 	
 	var msg = message;
 	var msgarray = msg.split(" ");
-	var commandoption = "";
 	$.each(msgarray, function(index, value){
 		console.log(index+": "+value);
 		var fierst = value.charAt(0);
