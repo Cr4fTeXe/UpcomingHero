@@ -83,7 +83,9 @@ function voteskip(act){
 	}
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
+	window.alert(woot);
 	var meh = $('.dubdown > .dub-counter').html();
+	window.alert(meh);
 	if(meh > woot && meh > 1 && mehskipx==0){mehskipx = 1; postMsg("Enough DubDowns. Video will be skipped!"); skipvideo(); mehskipx = 0;}else{}
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
@@ -162,7 +164,8 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 		if(msg.search('!gachimuchi') >= 0){ postMsg("http://booru.ehkzai.com/index.php?q=/image/6665.gif");}
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!hardwareinfo') >= 0){ hardwareinfo(); }
-		if(msg.search('!hello') >= 0){ sayhello(user); }
+		if(msg.search('!hello') >= 0 && commandoption == "hello1"){ sayhello(user); }
+		if(msg.search('!hello') >= 0 && commandoption == "hello2"){ postMsg("Hello there fgt :)"); }
 		if(msg.search('!yolo') >= 0){ yolo(); }
 		if(msg.search('!ping') >= 0){ ping(); }
 		if(msg.search('!fb') >= 0){ fb(); }
