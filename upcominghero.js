@@ -154,7 +154,9 @@ var msgoption = getCommandOptions(msg);
 	if(user != "hero" && user != "cyberpixlcraft" && user != "1337")
 	{	
 		mehskip();
+
 	if(msg.search('!') >=0){
+		console.log(msg);
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
 		if(msg.search('!time') >= 0){ postMsg(now);}
