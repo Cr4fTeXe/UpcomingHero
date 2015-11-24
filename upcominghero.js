@@ -26,6 +26,22 @@ function getChatUser(user){
 		return user.children().children(".username").html();
 	}else{ return currentUser; }
 	}
+function getCommandOption(message){ 	
+	var msg = message;
+	var msgarray = msg.split(" ");
+	var commandoption = "";
+	$.each(msgarray, function(index, value){
+		console.log(index+": "+value);
+		var fierst = value.charAt(0);
+		var laest = value.slice(-1);
+		if(fierst == "[" && laest == "]"){
+			commandoption = value.replace("[", "");
+			commandoption = commandoption.replace("]", "");
+		}
+		return commandoption;
+	})
+	console.log(commandoption);
+}
 function getTotalUser(){ return $(".room-user-counter").html(); }
 function postMsg(msg){
 	var message = msg;
@@ -83,9 +99,9 @@ function voteskip(act){
 	}
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
-	window.alert(woot);
+	console.log(woot);
 	var meh = $('.dubdown > .dub-counter').html();
-	window.alert(meh);
+	console.log(meh);
 	if(meh > woot && meh > 1 && mehskipx==0){mehskipx = 1; postMsg("Enough DubDowns. Video will be skipped!"); skipvideo(); mehskipx = 0;}else{}
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
@@ -136,23 +152,9 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	//Commands + function-calls
-	var msgarray = msg.split(" ");
-	var commandoption = "";
-	$.each(msgarray, function(index, value){
-		console.log(index+": "+value);
-		var fierst = value.charAt(0);
-		var laest = value.slice(-1);
-		if(fierst == "[" && laest == "]"){
-			commandoption = value.replace("[", "");
-			commandoption = commandoption.replace("]", "");
-		}
-	})
-	console.log(commandoption);
+var msgoption = getCommandOptions(msg);
 
-
-
-
-	if(user != "hero" && user != "cyberpixlcraft" && user!= 1337)
+	if(user != "hero" && user != "cyberpixlcraft" && user != "1337")
 	{	
 		mehskip();
 	if(msg.search('!') >=0){
