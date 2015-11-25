@@ -137,7 +137,8 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}*/
 
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
-	
+	console.log(msg);
+	console.log(user);
 	//Set userrank and staff
 	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
 	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
@@ -203,7 +204,7 @@ var msgoption = getCommandOptions(msg);
 	});//end of commands function
 
 setInterval(function(){ if(autoFB === true){ fb(); } }, 1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V424");
+console.log("UpcomingHero succesfully loaded! V425");
 
 });
 
