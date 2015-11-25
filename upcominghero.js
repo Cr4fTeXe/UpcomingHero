@@ -191,9 +191,11 @@ var msgoption = getCommandOptions(msg);
 		if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
 		if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
 		if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
-	}
-    	}
-	}
+	} //end of ! check
+    	} //end of bot user check
+	
+	//end of commands function
+ 	}
 	);
 
         setInterval(function () {
