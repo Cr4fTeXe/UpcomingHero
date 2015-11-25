@@ -17,6 +17,7 @@ function getChatMessage(msg){
 	amsghtml = amsghtml.replace("<p>","");
 	amsghtml = amsghtml.replace("</p>"," ");
 	amsghtml = amsghtml.replace('<a href="#" class="username">'+user+'</a>', '');
+	console.log(amsghtml);
 	return amsghtml;
 	}
 function getChatUser(user){
