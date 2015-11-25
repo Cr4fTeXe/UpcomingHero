@@ -7,8 +7,7 @@ $(".header-right-navigation").append($('<div class="yt-import"><img src="http://
 $("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
 */
 
-var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = "";
-var autoFB = true;
+var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = "", autoFB = true;
 //Functions
 function getChatMessage(msg){
 	var amsg = msg;
