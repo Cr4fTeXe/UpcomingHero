@@ -139,6 +139,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
 	console.log(msg);
 	console.log(user);
+	if(user != "hero" && user != "cyberpixlcraft"){	
 	//Set userrank and staff
 	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
 	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
@@ -155,8 +156,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	//Commands + function-calls
-var msgoption = getCommandOptions(msg);
-	if(user != "hero" && user != "cyberpixlcraft"){	
+	var msgoption = getCommandOptions(msg);
 
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
