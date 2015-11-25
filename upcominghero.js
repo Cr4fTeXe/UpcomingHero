@@ -244,8 +244,8 @@ setInterval(function autocommands(){
 //BEGINNING OF AUTO FUNCTION
 setInterval(function auto() { 
 	if(autoFB = true){ fb(); autoFB = false; autoRules = true; }
-	if(autoRules = true){ rules(); autoRules = false autoWeb = true;}
-	if(autoWeb = true){ rules(); autoWeb = false autoFB = true;}
+	if(autoRules = true){ rules(); autoRules = false; autoWeb = true;}
+	if(autoWeb = true){ rules(); autoWeb = false; autoFB = true;}
 }, 1000 * 60 * 5);
 //END OF AUTO FUNCTION
 
