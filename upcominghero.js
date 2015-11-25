@@ -140,6 +140,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	console.log(msg);
 	console.log(user);
 	if(user != "hero" && user != "cyberpixlcraft"){	
+	mehskip();	
 	//Set userrank and staff
 	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
 	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
@@ -197,10 +198,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 			if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
 		} //end of ! check
 
-    } //end of bot user check
-
-	mehskip();
-
+	} //end of bot user check
 	});//end of commands function
 
 setInterval(function(){ if(autoFB === true){ fb(); } }, 1000 * 60 * 70);
