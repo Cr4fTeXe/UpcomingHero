@@ -127,7 +127,7 @@ function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue
 function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC"); return gifurl; }
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
-$('body').on('text', 'li', function(){
+$('body').on('DOMNodeInserted', 'div.li', function(){
 	alert(getChatMessage($(this)));
 });
 //Command-Input
@@ -201,7 +201,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	});//end of commands function
 
 setInterval(function(){ if(autoFB === true){ fb(); } }, 1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V427 - test2");
+console.log("UpcomingHero succesfully loaded! V428 - test2");
 
 });
 
