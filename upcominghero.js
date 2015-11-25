@@ -104,7 +104,7 @@ function voteskip(act){
 function mehskip(){
 	var woot = $('.dubup > .dub-counter').html();
 	var meh = $('.dubdown > .dub-counter').html();
-	if(meh > woot && meh > 1 && mehskipx==0){mehskipx = 1; postMsg("Enough DubDowns. Video will be skipped!"); skipvideo(); mehskipx = 0;}else{}
+	if(meh > woot && meh > 1 && mehskipx==0){mehskipx = 1; postMsg("Enough DubDowns. Video will be skipped!"); $(".skip-el").trigger("click"); mehskipx = 0;}else{}
 	}
 function love(){postMsg(":heart: Love is in the Air :heart:");}
 function hardwareinfo(){postMsg("This bot runs on the Raspberry Pi of Cr4fTeXe.");}
@@ -198,7 +198,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	});//end of commands function
 
 setInterval(function(){ if(autoFB === true){ fb(); } }, 1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V428");
+console.log("UpcomingHero succesfully loaded! V429");
 
 });
 
