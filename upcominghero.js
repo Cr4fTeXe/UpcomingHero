@@ -124,8 +124,8 @@ function tooLong(){
 	}else{ postMsg("Video is less than 12 minutes, so it won't be skipped!"); }
 	}
 function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue = true;}else{inAutoQueue = false;}}
-function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC",{ data:'url' }); return gifurl; }
-function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+"); var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag,{ data: 'url' }); return gifurl; }
+function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC"); return gifurl; }
+function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+"); var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag); return gifurl; }
 
 
 
