@@ -129,7 +129,7 @@ function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https
 
 $('body').on('li', 'div.text', function(){
 	alert(getChatMessage($(this)));
-}
+)}
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function(){
 	
