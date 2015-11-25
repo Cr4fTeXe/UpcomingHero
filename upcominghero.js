@@ -204,5 +204,5 @@ var msgoption = getCommandOptions(msg);
             }
             },
             1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! VTEST");
+console.log("UpcomingHero succesfully loaded! VTEST2");
 })
