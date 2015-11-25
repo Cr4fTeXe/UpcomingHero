@@ -126,17 +126,9 @@ function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue
 function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC"); return gifurl; }
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
-
-
-$(".dubup").on("change",".dub-counter", function(){mehskip();})
-$(".dubdown").on("change",".dub-counter", function(){mehskip();})
-
-$('.progressBg').on("change", function(){ if($(this).attr("style") == "wídth: 0%;"){$(".dubup").trigger("click");} })
-
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
-	/*$(".dubup").trigger("click");
-	autoJoinQueue();
+	/*autoJoinQueue();
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}*/
 
 	//Set userrank and staff
@@ -167,10 +159,10 @@ var msgoption = getCommandOptions(msg);
 		if(msg.search('back') >= 0){ wb(user); }
 
 	if(msg.search('!') >=0){
-		//if(msg.search('!calc') >= 0){ calculate(); } todo
+		//if(msg.search('!calc') >= 0){ calculate(); }
 		if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
-		//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); } todo
-		//if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); } todo
+		//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); }
+		//if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); }
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
 		if(msg.search('!time') >= 0){ postMsg(now);}
