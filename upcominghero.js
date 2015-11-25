@@ -29,7 +29,6 @@ function getCommandOptions(message){
 	var msg = message;
 	var msgarray = msg.split(" ");
 	$.each(msgarray, function(index, value){
-		console.log(index+": "+value);
 		var fierst = value.charAt(0);
 		var laest = value.slice(-1);
 		if(fierst == "[" && laest == "]"){
@@ -168,9 +167,10 @@ var msgoption = getCommandOptions(msg);
 		if(msg.search('back') >= 0){ wb(user); }
 
 	if(msg.search('!') >=0){
-		console.log(msg);
-		if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); }
-		if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); }
+		//if(msg.search('!calc') >= 0){ calculate(); } todo
+		if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/Search/"+commandoption); }
+		//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); } todo
+		//if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); } todo
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
 		if(msg.search('!time') >= 0){ postMsg(now);}
