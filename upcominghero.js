@@ -169,7 +169,7 @@ var msgoption = getCommandOptions(msg);
 
 	if(msg.search('!') >=0){
 		console.log(msg);
-		if(msg.search('!gif') >= 0){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF();) }
+		if(msg.search('!gif') >= 0){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); }
 		if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); }
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
