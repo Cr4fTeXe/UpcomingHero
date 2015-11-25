@@ -203,7 +203,7 @@ var msgoption = getCommandOptions(msg);
 	});//end of commands function
 
 setInterval(function(){ if(autoFB === true){ fb(); } }, 1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V423");
+console.log("UpcomingHero succesfully loaded! V423elseiftest");
 
 });
 
