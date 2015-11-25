@@ -150,7 +150,8 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 
 	//Commands + function-calls
 var msgoption = getCommandOptions(msg);
-
+	alert("user");
+	alert("msg");
 	if(user != "hero" && user != "cyberpixlcraft")
 	{	
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
@@ -203,5 +204,5 @@ var msgoption = getCommandOptions(msg);
             }
             },
             1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V422");
+console.log("UpcomingHero succesfully loaded! VTEST");
 })
