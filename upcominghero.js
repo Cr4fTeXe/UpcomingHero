@@ -124,8 +124,8 @@ function tooLong(){
 	}else{ postMsg("Video is less than 12 minutes, so it won't be skipped!"); }
 	}
 function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue = true;}else{inAutoQueue = false;}}
-function getRandomGIF(){ var gifurl = $.getJSON("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC",{ data:'url' }); return gifurl; }
-function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+"); var gifurl = $.getJSON("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag,{ data: 'url' }); return gifurl; }
+function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC",{ data:'url' }); return gifurl; }
+function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+"); var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag,{ data: 'url' }); return gifurl; }
 
 
 
@@ -169,8 +169,8 @@ var msgoption = getCommandOptions(msg);
 
 	if(msg.search('!') >=0){
 		console.log(msg);
-		if(msg.search('!gif') >= 0){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); }
-		if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); }
+		if(msg.search('!gif') >= 0){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); }
+		if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); }
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
 		if(msg.search('!time') >= 0){ postMsg(now);}
