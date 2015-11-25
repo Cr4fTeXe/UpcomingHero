@@ -168,7 +168,7 @@ var msgoption = getCommandOptions(msg);
 
 	if(msg.search('!') >=0){
 		//if(msg.search('!calc') >= 0){ calculate(); } todo
-		if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/Search/"+commandoption); }
+		if(msg.search('!search') >= 0 && commandoption.length > 0){ commandoption = commandoption.replace(" ", "+"); postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
 		//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); } todo
 		//if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); } todo
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
