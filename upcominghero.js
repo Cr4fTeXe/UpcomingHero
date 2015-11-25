@@ -137,6 +137,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}*/
 
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
+	alert(getChatMessage($(this)));
 	console.log(msg);
 	console.log(user);
 	if(user != "hero" && user != "cyberpixlcraft"){	
@@ -202,7 +203,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	});//end of commands function
 
 setInterval(function(){ if(autoFB === true){ fb(); } }, 1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V426");
+console.log("UpcomingHero succesfully loaded! V426 - test");
 
 });
 
