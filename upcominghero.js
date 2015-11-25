@@ -139,29 +139,12 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
 	console.log(user);
 	if(user != "hero" && user != "cyberpixlcraft"){	
-	mehskip();	
-	//Set userrank and staff
-	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
-	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
-	if(rank.search('isCo-owner') >= 0){userrank = "Co-owner"; staff = true;}
-	if(rank.search('isManager') >= 0){userrank = "Manager"; staff = true;}
-	if(rank.search('isMod') >= 0){userrank = "Mod"; staff = true;}
-	if(rank.search('isVIP') >= 0){userrank = "VIP"; staff = true;}
-	if(rank.search('isResident-dj') >= 0){userrank = "Resident-dj";}
-	if(rank.search('isDefault') >= 0){userrank = "Default";}
-
-	var commandlist = "Commands: http://upcomingrecords.com/commands/";
-	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
-
-	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
 
 	//Commands + function-calls
 	var msgoption = getCommandOptions(msg);
-
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('back') >= 0){ wb(user); }
-
 		if(msg.search('!') >=0){
 			//if(msg.search('!calc') >= 0){ calculate(); }
 			if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
@@ -279,7 +262,7 @@ setInterval(function auto() {
 setInterval(function(){ mehskip(); }, 4200);
 //END MEHSKIP
 
-console.log("UpcomingHero succesfully loaded! V42");
+console.log("UpcomingHero succesfully loaded! V42.420.1337");
 
 });
 
