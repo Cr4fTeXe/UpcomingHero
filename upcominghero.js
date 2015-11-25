@@ -202,6 +202,33 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 
 //TESTING AUTO COMMAND
 setInterval(function autocommands(){ 
+	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
+	
+	if(user != "hero" && user != "cyberpixlcraft"){	
+		
+	//Set userrank and staff
+	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
+	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
+	if(rank.search('isCo-owner') >= 0){userrank = "Co-owner"; staff = true;}
+	if(rank.search('isManager') >= 0){userrank = "Manager"; staff = true;}
+	if(rank.search('isMod') >= 0){userrank = "Mod"; staff = true;}
+	if(rank.search('isVIP') >= 0){userrank = "VIP"; staff = true;}
+	if(rank.search('isResident-dj') >= 0){userrank = "Resident-dj";}
+	if(rank.search('isDefault') >= 0){userrank = "Default";}
+
+	var commandlist = "Commands: http://upcomingrecords.com/commands/";
+	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
+
+	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
+
+	//Commands + function-calls
+	var msgoption = getCommandOptions(msg);
+
+		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
+		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
+		if(msg.search('back') >= 0){ wb(user); }
+
+		if(msg.search('!') >=0){
 			//if(msg.search('!calc') >= 0){ calculate(); }
 			if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
 			//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); }
@@ -235,7 +262,6 @@ setInterval(function autocommands(){
 			if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
 			if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
 		
-	
 	
 }, 1700);
 /////TESTING THIS
