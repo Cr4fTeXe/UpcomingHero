@@ -135,9 +135,9 @@ $('.progressBg').on("change", function(){ if($(this).attr("style") == "wídth: 0
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function () {
-	$(".dubup").trigger("click");
+	/*$(".dubup").trigger("click");
 	autoJoinQueue();
-	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}
+	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}*/
 
 	//Set userrank and staff
 	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
