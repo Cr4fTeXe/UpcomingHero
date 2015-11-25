@@ -202,5 +202,5 @@ var msgoption = getCommandOptions(msg);
             }
             },
             1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V420");
+console.log("UpcomingHero succesfully loaded! V421");
 })
