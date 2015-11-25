@@ -153,7 +153,6 @@ var msgoption = getCommandOptions(msg);
 
 	if(user != "hero" && user != "cyberpixlcraft")
 	{	
-		mehskip();
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('back') >= 0){ wb(user); }
@@ -193,7 +192,7 @@ var msgoption = getCommandOptions(msg);
 		if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
 	} //end of ! check
     	} //end of bot user check
-	
+	mehskip();
 	//end of commands function
  	}
 	);
@@ -204,5 +203,5 @@ var msgoption = getCommandOptions(msg);
             }
             },
             1000 * 60 * 70);
-console.log("UpcomingHero succesfully loaded! V421");
+console.log("UpcomingHero succesfully loaded! V422");
 })
