@@ -157,7 +157,7 @@ $('body').on('DOMNodeInserted', 'div.text', function () {
 	//Commands + function-calls
 var msgoption = getCommandOptions(msg);
 
-	if(user != "hero" && user != "cyberpixlcraft" && user != "1337")
+	if(user != "hero" && user != "cyberpixlcraft")
 	{	
 		mehskip();
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
