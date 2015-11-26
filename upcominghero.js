@@ -74,8 +74,8 @@ function fb(){
 	var chatmsg = "/me | Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
 	postMsg(chatmsg);
 	}
-function rules(){
-	var chatmsg = "/me | Rules: If Mehs > Woots! Track will be skipped.";
+function lastfm(){
+	var chatmsg = "/me | Click here to see recent songs: http://www.last.fm/user/upcomingrecords";
 	postMsg(chatmsg);
 	}
 function website(){
@@ -195,81 +195,12 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	} //end of bot user check
 	});//end of commands function
 
-//TESTING AUTO COMMAND
-setInterval(function autocommands(){ 
-	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
-	console.log(msg);
-	if(user != "hero" && user != "cyberpixlcraft"){	
-		
-	//Set userrank and staff
-	var rank = $(this).parent().parent().parent().attr("class"), userrank = "", staff = false, votedisabled = false;
-	if(rank.search('isOwner') >= 0){userrank = "Owner"; staff = true;}
-	if(rank.search('isCo-owner') >= 0){userrank = "Co-owner"; staff = true;}
-	if(rank.search('isManager') >= 0){userrank = "Manager"; staff = true;}
-	if(rank.search('isMod') >= 0){userrank = "Mod"; staff = true;}
-	if(rank.search('isVIP') >= 0){userrank = "VIP"; staff = true;}
-	if(rank.search('isResident-dj') >= 0){userrank = "Resident-dj";}
-	if(rank.search('isDefault') >= 0){userrank = "Default";}
-
-	var commandlist = "Commands: http://upcomingrecords.com/commands/";
-	var staffcommandlist = "!skip, !queuePlaylist, !joinQueue, !pauseQueue, !resumeQueue, !shutdown (bot has to be restarted manually after shutdown)";
-
-	if(skipuser > 0 && uservotes > 0 && skipuser == uservotes){ votedisabled = true; voteskip("end");}
-
-	//Commands + function-calls
-	var msgoption = getCommandOptions(msg);
-
-		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
-		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
-		if(msg.search('back') >= 0){ wb(user); }
-
-		if(msg.search('!') >=0){
-			//if(msg.search('!calc') >= 0){ calculate(); }
-			if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
-			//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); }
-			//if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); }
-			if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
-			if(msg.search('!tooLong') >= 0){ tooLong();}
-			if(msg.search('!time') >= 0){ postMsg(now);}
-			if(msg.search('!fuckyou') >= 0){ postMsg("http://i.imgur.com/dMDdQOI.gif");}
-			if(msg.search('!dealwithit') >= 0){ postMsg("http://i.imgur.com/KtIcXyL.gif");}
-			if(msg.search('!rub') >= 0){ postMsg("http://static2.fjcdn.com/thumbnails/comments/5082699+_057afdd878601db2f01dbfc4fd6b3872.gif");}
-			if(msg.search('!gachimuchi') >= 0){ postMsg("http://booru.ehkzai.com/index.php?q=/image/6665.gif");}
-			if(msg.search('!hardwareinfo') >= 0){ hardwareinfo(); }
-			if(msg.search('!hello') >= 0 && commandoption == "1"){ sayhello(user); }
-			if(msg.search('!hello') >= 0 && commandoption == "2"){ postMsg("Welcome to the UpcomingRecords Community :D"); }
-			if(msg.search('!bye') >= 0 ){ postMsg("See you later, Adios, Auf Wiedersehen, Au Revoir, Ciao, Tot ziens, Adjö, Farvel, Poka, Sayōnara, Namaste, Alweda, Näkemiin"); }
-			if(msg.search('!yolo') >= 0){ yolo(); }
-			if(msg.search('!ping') >= 0){ ping(); }
-			if(msg.search('!fb') >= 0){ fb(); }
-			if(msg.search('!dubx') >= 0){ dubx(); }
-			if(msg.search('!rave') >= 0){ postMsg("http://i.imgur.com/Rxv5Qnu.gif");}
-			if(msg.search('!1738') >= 0){ postMsg("I'm like: Hey, what's up, hello.");}
-			if(msg.search('!voteskip') >= 0 && staff == true){ votedisabledfalse(); voteskip("start"); } //Immer noch verbuggt
-			if(msg.search('!voteyes') >= 0){ voteskip("yes"); }
-			if(msg.search('!voteno') >= 0){ voteskip("no"); }
-			if(msg.search('!skip') >= 0 && staff == true){ skipvideo(); }
-			if(msg.search('!shutdown') >= 0 && staff == true && (user == "Cr4ftexe" || user == "1337")){ window.close(); }
-			if(msg.search('!queuePlaylist') >= 0 && staff == true && user == "Cr4ftexe"){ queuePlaylist(); }
-			if(msg.search('!joinQueue') >= 0 && staff == true){ joinQueue(); }
-			if(msg.search('!pauseQueue') >= 0 && staff == true){ pauseQueue(); }
-			if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
-			if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
-			if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
-		
-	
-		} //END !COMMAND SEARCH
-		} //END IF(USER SEARCH)
-	}, 1700); //END AUTO FUNCTION
-/////TESTING THIS
-
-
 //BEGINNING OF AUTO FUNCTION
 setInterval(function auto() { 
 	if(autoFB = true){ fb(); autoFB = false; autoRules = true; }
-	if(autoRules = true){ rules(); autoRules = false; autoWeb = true;}
+	if(autoRules = true){ lastfm(); autoRules = false; autoWeb = true;}
 	if(autoWeb = true){ website(); autoWeb = false; autoFB = true;}
-}, 1000 * 60 * 5);
+}, 1000 * 60 * 14);
 //END OF AUTO FUNCTION
 
 //MEHSKIP
