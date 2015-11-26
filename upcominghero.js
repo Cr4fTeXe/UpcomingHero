@@ -7,11 +7,7 @@ $(".header-right-navigation").append($('<div class="yt-import"><img src="http://
 $("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
 */
 
-var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = ""; 
-
-//AUTOFB = TRUE; REST = FALSE; OR IT WILL NOT WORK
-var autoFB = true; autoRules = false; autoWeb = false; autorestart = false;
-var autoCounter = 0;
+var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, autoCounter = 0,  currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = ""; 
 
 //Functions
 function getChatMessage(msg){
@@ -205,13 +201,12 @@ setInterval(function auto() {
 	if(autoCounter == 2) {website();}
 	if(autoCounter == 1) {fb();}
 	autoCounter = autoCounter + 1;
-}, 1000 * 60 * 1);
+}, 1000 * 60 * 42);
 //END OF AUTO FUNCTION
 
 //MEHSKIP
 setInterval(function(){ mehskip(); }, 4200);
 //END MEHSKIP
-alert("working5");
 console.log("UpcomingHero succesfully loaded! V42.420.1337.9001");
 
 });
