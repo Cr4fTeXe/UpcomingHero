@@ -246,7 +246,9 @@ setInterval(function autocommands(){
 			if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
 		
 	
-}}, 1700);
+		} //END !COMMAND SEARCH
+		} //END IF(USER SEARCH)
+	}, 1700); //END AUTO FUNCTION
 /////TESTING THIS
 
 
