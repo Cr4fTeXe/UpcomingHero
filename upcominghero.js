@@ -200,7 +200,7 @@ setInterval(function auto() {
 	if(autoFB = true){ fb(); autoFB = false; autoRules = true; }
 	if(autoRules = true){ lastfm(); autoRules = false; autoWeb = true;}
 	if(autoWeb = true){ website(); autoWeb = false; autoFB = true;}
-}, 1000 * 60 * 14);
+}, 1000 * 60 * 42);
 //END OF AUTO FUNCTION
 
 //MEHSKIP
