@@ -11,6 +11,7 @@ var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = ""
 
 //AUTOFB = TRUE; REST = FALSE; OR IT WILL NOT WORK
 var autoFB = true; autoRules = false; autoWeb = false; autorestart = false;
+var autoCounter = 0;
 
 //Functions
 function getChatMessage(msg){
@@ -197,18 +198,20 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 
 //BEGINNING OF AUTO FUNCTION
 setInterval(function auto() { 
-	if(autorestart = true) {autoFB = true; autorestart = false;}
-	if(autoWeb = true){ website(); autoWeb = false; autorestart = true;}
-	if(autoRules = true){ lastfm(); autoRules = false; autoWeb = true;}
-	if(autoFB = true){ fb(); autoFB = false; autoRules = true; }
-}, 1000 * 60 * 42);
+	if(autoCounter = 5) {autoCounter = 0;}
+	if(autoCounter = 4) {rules(); autoCounter = 5;}
+	if(autoCounter = 3) {lastfm(); autoCounter = 4;}
+	if(autoCounter = 2) {website(); autoCounter = 3;}
+	if(autoCounter = 1) {fb(); autoCounter = 2;}
+	if(autoCounter = 0) {autoCounter = 1;}
+}, 1000 * 60 * 1);
 //END OF AUTO FUNCTION
 
 //MEHSKIP
 setInterval(function(){ mehskip(); }, 4200);
 //END MEHSKIP
 
-console.log("UpcomingHero succesfully loaded! V42.420.1337");
+console.log("UpcomingHero succesfully loaded! V42.420.1337.9001");
 
 });
 
