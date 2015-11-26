@@ -10,7 +10,7 @@ $("body").append($('<div class="import-input"><div class="import-inner"><span cl
 var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = ""; 
 
 //AUTOFB = TRUE; REST = FALSE; OR IT WILL NOT WORK
-var autoFB = true; autoRules = false; autoWeb = false;
+var autoFB = true; autoRules = false; autoWeb = false; autorestart = false;
 
 //Functions
 function getChatMessage(msg){
@@ -197,9 +197,10 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 
 //BEGINNING OF AUTO FUNCTION
 setInterval(function auto() { 
-	if(autoFB = true){ fb(); autoFB = false; autoRules = true; }
+	if(autorestart = true) {autoFB = true; autorestart = false;}
+	if(autoWeb = true){ website(); autoWeb = false; autorestart = true;}
 	if(autoRules = true){ lastfm(); autoRules = false; autoWeb = true;}
-	if(autoWeb = true){ website(); autoWeb = false; autoFB = true;}
+	if(autoFB = true){ fb(); autoFB = false; autoRules = true; }
 }, 1000 * 60 * 42);
 //END OF AUTO FUNCTION
 
