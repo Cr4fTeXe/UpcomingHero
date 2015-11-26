@@ -82,14 +82,14 @@ function website(){
 	var chatmsg = "/me | Make sure to visit our website! http://www.UpcomingRecords.com";
 	postMsg(chatmsg);
 	}
-	function fb(){
-	var chatmsg = "/me | Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
+	function rules(){
+	var chatmsg = "/me | Please see our rules here: http://upcomingrecords.com/rules/";
 	postMsg(chatmsg);
 	}
 function dubx(){postMsg("Make sure to use the DubX-Extension and to activate the Community-Theme option. Get the extension here: https://dubx.net/");}
 function skipvideo(vote){
 	var vot = vote;
-	$(".skip-el").trigger("click");
+	$(".skip-el").trigger("click");fb
 	if(vot = "vote"){ postMsg("Successful Vote. Video skipped!"); }
 	}
 function votedisabledfalse(){ votedisabled = false;}
