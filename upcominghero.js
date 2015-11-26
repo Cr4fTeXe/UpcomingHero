@@ -198,7 +198,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 //TESTING AUTO COMMAND
 setInterval(function autocommands(){ 
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
-	
+	console.log(msg);
 	if(user != "hero" && user != "cyberpixlcraft"){	
 		
 	//Set userrank and staff
