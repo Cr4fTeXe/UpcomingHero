@@ -200,10 +200,10 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 setInterval(function auto() { 
 	console.log(autoCounter);
 	if(autoCounter >= 5) {autoCounter = 0;}
-	if(autoCounter = 4) {rules();}
-	if(autoCounter = 3) {lastfm();}
-	if(autoCounter = 2) {website();}
-	if(autoCounter = 1) {fb();}
+	if(autoCounter == 4) {rules();}
+	if(autoCounter == 3) {lastfm();}
+	if(autoCounter == 2) {website();}
+	if(autoCounter == 1) {fb();}
 	autoCounter = autoCounter + 1;
 }, 1000 * 60 * 1);
 //END OF AUTO FUNCTION
