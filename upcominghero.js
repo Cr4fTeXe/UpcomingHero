@@ -71,7 +71,19 @@ function yolo(){
 	postMsg(chatmsg);
 	}
 function fb(){
-	var chatmsg = "Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
+	var chatmsg = "/me | Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
+	postMsg(chatmsg);
+	}
+function rules(){
+	var chatmsg = "/me | Rules: If Mehs > Woots! Track will be skipped.";
+	postMsg(chatmsg);
+	}
+function website(){
+	var chatmsg = "/me | Make sure to visit our website! http://www.UpcomingRecords.com";
+	postMsg(chatmsg);
+	}
+	function fb(){
+	var chatmsg = "/me | Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
 	postMsg(chatmsg);
 	}
 function dubx(){postMsg("Make sure to use the DubX-Extension and to activate the Community-Theme option. Get the extension here: https://dubx.net/");}
@@ -256,7 +268,7 @@ setInterval(function autocommands(){
 setInterval(function auto() { 
 	if(autoFB = true){ fb(); autoFB = false; autoRules = true; }
 	if(autoRules = true){ rules(); autoRules = false; autoWeb = true;}
-	if(autoWeb = true){ rules(); autoWeb = false; autoFB = true;}
+	if(autoWeb = true){ website(); autoWeb = false; autoFB = true;}
 }, 1000 * 60 * 5);
 //END OF AUTO FUNCTION
 
