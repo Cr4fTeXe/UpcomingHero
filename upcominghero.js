@@ -198,12 +198,13 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 
 //BEGINNING OF AUTO FUNCTION
 setInterval(function auto() { 
-	if(autoCounter = 5) {autoCounter = 0;}
+	if(autoCounter >= 5) {autoCounter = 0;}
 	if(autoCounter = 4) {rules(); autoCounter = 5;}
 	if(autoCounter = 3) {lastfm(); autoCounter = 4;}
 	if(autoCounter = 2) {website(); autoCounter = 3;}
 	if(autoCounter = 1) {fb(); autoCounter = 2;}
-	if(autoCounter = 0) {autoCounter = 1;}
+	alert(autoCounter);
+	autoCounter = autoCounter + 1;
 }, 1000 * 60 * 1);
 //END OF AUTO FUNCTION
 
