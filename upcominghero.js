@@ -208,9 +208,13 @@ setInterval(function auto() {
 //END OF AUTO FUNCTION
 
 //MEHSKIP
-setInterval(function(){ mehskip(); }, 4200);
+setInterval(function(){ mehskip(); 
+	user = getChatUser($(this));
+	alert(user);
+	
+}, 4200);
 //END MEHSKIP
-console.log("UpcomingHero succesfully loaded! V42.420.1337.9003");
+console.log("UpcomingHero succesfully loaded! V42.420.1337.9003.TEST");
 
 });
 
