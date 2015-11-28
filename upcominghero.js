@@ -154,7 +154,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('back') >= 0){ wb(user); }
-		if(msg.search('!') >=0){
+		//if(msg.search('!') >=0){
 			//if(msg.search('!calc') >= 0){ calculate(); }
 			if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
 			//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); }
@@ -187,7 +187,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 			if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
 			if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
 			if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
-		} //end of ! check
+	//	} //end of ! check
 
 	} //end of bot user check
 	});//end of commands function
