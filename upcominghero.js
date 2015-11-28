@@ -185,8 +185,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 			if(msg.search('!joinQueue') >= 0 && staff == true){ joinQueue(); }
 			if(msg.search('!pauseQueue') >= 0 && staff == true){ pauseQueue(); }
 			if(msg.search('!resumeQueue') >= 0 && staff == true){ resumeQueue(); }
-			if(msg.search('!staffcommands') >= 0 && staff == true){ postMsg(staffcommandlist); }
-			if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg(commandlist); }
+			if(msg.search('!commands') >= 0 || msg.search('!help') >= 0){ postMsg("http://upcomingrecords.com/commands/"); }
 	//	} //end of ! check
 
 	} //end of bot user check
@@ -211,7 +210,7 @@ setInterval(function auto() {
 //MEHSKIP
 setInterval(function(){ mehskip(); }, 4200);
 //END MEHSKIP
-console.log("UpcomingHero succesfully loaded! V42.420.1337.9002");
+console.log("UpcomingHero succesfully loaded! V42.420.1337.9003");
 
 });
 
