@@ -140,6 +140,7 @@ function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/r
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
 //Command-Input
+$('body').on('DOMNodeInserted', 'ul.chat-main', function(){ console.log("first message!"); })
 $('body').on('DOMNodeInserted', 'div.text', function(){
 	
 	/*autoJoinQueue();
@@ -155,10 +156,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
 		if(msg.search('back') >= 0){ wb(user); }
 		//if(msg.search('!') >=0){
-			//if(msg.search('!calc') >= 0){ calculate(); }
 			if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
-			//if(msg.search('!gif') >= 0 && commandoption.length < 1){ /*postMsg(getRandomGIF());*/ console.log(getRandomGIF()); console.log("TESTgetrandomgif"); }
-			//if(msg.search('!gif') >= 0 && commandoption.length > 0){ /*postMsg(getTagGIF(commandoption));*/ console.log(getTagGIF(commandoption)); console.log("TESTgettaggif"); }
 			if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 			if(msg.search('!tooLong') >= 0){ tooLong();}
 			if(msg.search('!time') >= 0){ postMsg(now);}
