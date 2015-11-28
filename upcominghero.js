@@ -195,11 +195,15 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 //BEGINNING OF AUTO FUNCTION
 setInterval(function auto() { 
 	console.log(autoCounter);
+	user = getChatUser($(this));
+	if(user != "hero" && user != "cyberpixlcraft") //Make sure no spam!
+	{
 	if(autoCounter >= 5) {autoCounter = 0;}
 	if(autoCounter == 4) {rules();}
 	if(autoCounter == 3) {lastfm();}
 	if(autoCounter == 2) {website();}
 	if(autoCounter == 1) {fb();}
+	}
 	autoCounter = autoCounter + 1;
 }, 1000 * 60 * 42);
 //END OF AUTO FUNCTION
