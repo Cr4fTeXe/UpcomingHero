@@ -194,7 +194,6 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 //BEGINNING OF AUTO FUNCTION
 setInterval(function auto() { 
 	console.log(autoCounter);
-	user = getChatUser($(this));
 	if(user != "hero" && user != "cyberpixlcraft") //Make sure no spam!
 	{
 	if(autoCounter >= 5) {autoCounter = 0;}
@@ -208,13 +207,11 @@ setInterval(function auto() {
 //END OF AUTO FUNCTION
 
 //MEHSKIP
-setInterval(function(){ mehskip(); 
-	user = getChatUser($(this));
+setInterval(function(){ mehskip();
 	alert(user);
-	
 }, 4200);
 //END MEHSKIP
-console.log("UpcomingHero succesfully loaded! V42.420.1337.9003.TEST");
+console.log("UpcomingHero succesfully loaded! V42.420.1337.9003.TEST2");
 
 });
 
