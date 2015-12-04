@@ -140,7 +140,7 @@ function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/r
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
 
-$('ul.chat-main').on('DOMNodeInserted', function(){
+/*$('ul.chat-main').on('DOMNodeInserted', function(){
 	var now = new Date();
 	var hours = now.getHours();
 	var minutes = now.getMinutes();
@@ -149,7 +149,8 @@ $('ul.chat-main').on('DOMNodeInserted', function(){
 	console.log($(this).attr('class'));
 	console.log(timenow);
 	console.log("----------------------------------");
-})
+})*/
+document.addEventListener('DOMNodeInserted', function (evt) { console.log(evt.target + ' inserted under parent ' + evt.relatedNode); }, false);
 
 //Command-Input
 $('body').on('DOMNodeInserted', 'div.text', function(){
@@ -218,6 +219,6 @@ setInterval(function auto() {
 //MEHSKIP
 setInterval(function(){ mehskip();}, 4200);
 //END MEHSKIP
-console.log("UpcomingHero succesfully loaded! V42.420.1337.13");
+console.log("UpcomingHero succesfully loaded! V42.420.1337.14");
 
 });
