@@ -140,13 +140,13 @@ function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/r
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
 
-$('ul.chat-main').on('DOMNodeInserted', function(){ 	
+$('ul.chat-main').on('DOMNodeInserted', function(){
 	var now = new Date();
 	var hours = now.getHours();
 	var minutes = now.getMinutes();
 	var seconds = now.getSeconds();
-	var timenow = hours + " " + minutes + " " + seconds; 
-	console.log("test"); 
+	var timenow = hours + " " + minutes + " " + seconds;
+	console.log($(this).attr('class'));
 	console.log(timenow);
 	console.log("----------------------------------");
 })
