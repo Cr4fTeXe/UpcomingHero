@@ -139,9 +139,11 @@ function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue
 function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC"); return gifurl; }
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
+
+$('ul.chat-main').on('DOMNodeInserted', function(){ console.log("test"); console.log($(this)); })
+
 //Command-Input
-$('body').on('DOMNodeInserted', 'ul.chat-main', function(){ console.log("first message!"); })
-$('body').on('DOMNodeInserted', 'div.text', function(){
+$('body').on('DOMNodeInserted', 'div.text, ul.chat-main', function(){
 	
 	/*autoJoinQueue();
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}*/
