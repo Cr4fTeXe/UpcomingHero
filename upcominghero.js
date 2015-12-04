@@ -140,10 +140,10 @@ function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/r
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
 
-$('ul.chat-main').on('DOMNodeInserted', function(){ console.log("test"); console.log($(this)); })
+$('ul.chat-main').on('DOMNodeInserted', function(){ console.log("test"); })
 
 //Command-Input
-$('body').on('DOMNodeInserted', 'div.text, ul.chat-main', function(){
+$('body').on('DOMNodeInserted', 'div.text', function(){
 	
 	/*autoJoinQueue();
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}*/
